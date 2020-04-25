@@ -39,7 +39,6 @@
   <!--    Spotify example -->
   <servlet>
     <description></description>
-    <display-name>SpotifyAuthController</display-name>
     <servlet-name>SpotifyAuthController</servlet-name>
     <servlet-class>aiss.controller.oauth.GenericAuthController</servlet-class>
     <init-param>
@@ -55,7 +54,6 @@
   <!--  SpotifyOAuth2Callback -->
   <servlet>
     <description></description>
-    <display-name>SpotifyOAuth2Callback</display-name>
     <servlet-name>SpotifyOAuth2Callback</servlet-name>
     <servlet-class>aiss.controller.oauth.OAuth2Callback</servlet-class>
     <init-param>
