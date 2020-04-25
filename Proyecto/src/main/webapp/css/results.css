@@ -15,6 +15,7 @@ nav li {
 body {
 	width: auto;
 	margin: 0;
+	color: white;
 }
 
 .ticketmaster {
@@ -31,11 +32,9 @@ body {
 .img-tm {
 	width: 300px;
 	margin: auto;
+	display: block;
 }
 
-.img-tm-d {
-	align: center;
-}
 
 .ticketmaster span {
 	margin: 0 25px;
@@ -45,7 +44,6 @@ body {
 
 .ticketmaster h1 {
 	background-color: #4782A5;
-	color: white;
 	font-size: 35px;
 	font-family: 'Fjalla One', sans-serif;
 	align-items: center;
