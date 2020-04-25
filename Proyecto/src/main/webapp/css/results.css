@@ -1,0 +1,52 @@
+nav {
+	width: 100%;
+	background-color: #4782A5;
+}
+
+nav ul {
+	margin: 0;
+}
+
+nav li {
+	display: inline-block;
+	width: 200px;
+}
+
+body {
+	width: auto;
+	margin: 0;
+}
+
+.ticketmaster {
+	margin: 50px;
+	width: 500px;
+	background-color: #4782A5;
+}
+
+.tmaster-info {
+	border: 1px solid;
+	margin: 10px;
+}
+
+.img-tm {
+	width: 300px;
+	margin: auto;
+}
+
+.img-tm-d {
+	align: center;
+}
+
+.ticketmaster span {
+	margin: 0 25px;
+	font-size: 24px;
+	font-family: 'Fjalla One', sans-serif;
+}
+
+.ticketmaster h1 {
+	background-color: #4782A5;
+	color: white;
+	font-size: 35px;
+	font-family: 'Fjalla One', sans-serif;
+	align-items: center;
+}

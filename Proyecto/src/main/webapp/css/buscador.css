@@ -1,0 +1,121 @@
+h1 {
+	font-size: 2em;
+	font-weight: bold;
+	margin: 10px;
+	text-align: center;
+	color: #4782A5;
+}
+
+#searchDiv {
+	border: 1px black;
+	margin: 10px;
+	display: block;
+	padding: 50px;
+	text-align: center;
+}
+
+#searchForm input {
+	width: 200px;
+	margin: 20px;
+}
+
+span {
+	font-size: 20px;
+	margin: 10px;
+	text-align: center;
+	color: #4782A5;
+}
+
+legend {
+	padding: 0.2em 0.5em;
+	border: 1px solid gray;
+	font-size: 90%;
+	text-align: right;
+}
+
+nav {
+	width: 100%;
+	background-color: #4782A5;
+}
+
+nav ul {
+	margin: 0;
+}
+
+nav li {
+	display: inline-block;
+	width: 100px;
+}
+
+nav li a {
+	text-align: center;
+	font-size: 22px;
+	text-decoration: none;
+	color: white;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.nav_bottom {
+	float: right;
+	padding: 32px 38px;
+}
+
+.nav_bottom a:hover {
+	opacity: .5;
+	font-size: 25px;
+}
+
+body {
+	width: 99%;
+	margin: 0;
+}
+
+form {
+	margin: 0 auto;
+	display: block;
+	width: max-content;
+}
+
+.form_inicio {
+	margin: 12px 0;
+}
+
+label {
+	margin-right: 12px;
+	font-size: 19px;
+	color: #4782A5;
+}
+
+.form_inicio input {
+	width: 320px;
+	height: 22px;
+	padding: 2px 10px;
+	font-size: 15px;
+	float: right;
+}
+
+form>input:last-child {
+	display: block;
+	width: 60%;
+	padding: 8px 44px;
+	float: right;
+	background-color: #4782A5;
+	border: none;
+	color: white;
+}
+
+form>input:last-child:hover {
+	opacity: .5;
+}
+
+.check {
+	margin: 36px 0;
+}
+
+.contenido {
+	display: block;
+	width: auto;
+	padding: 8px 44px;
+	float: inherit;
+	font-family: 'Montserrat', sans-serif;
+}
