@@ -11,6 +11,6 @@
         "clientId": "9da31c1437794f1487b865e6b24ce5ee",
         "clientSecret": "fb2db41274c745ea85d8477d8ccaf8d8",
         "authorizationFormUrl": "https://accounts.spotify.com/authorize",
-        "scopes": []
+        "scopes": ["streaming"]
     }
 }		

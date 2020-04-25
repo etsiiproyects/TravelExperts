@@ -27,6 +27,9 @@ public class SearchController extends HttpServlet {
 	}
 	
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
+		String accessToken=(String) req.getSession().getAttribute("Spotify-token");
+		if(accessToken!=null && !"".equals(accessToken)) {
+			
 		
 		String query = req.getParameter("searchQuery");
 		RequestDispatcher rd = null;
@@ -49,8 +52,12 @@ public class SearchController extends HttpServlet {
 			log.log(Level.SEVERE, "Objeto Spotify: " + spotyResults);
 			rd=req.getRequestDispatcher("/error.jsp");
 		}
-		
 		rd.forward(req, resp);
+		
+		}else {
+			log.info("Intenta acceder a Spotify sin token");
+			req.getRequestDispatcher("AuthController/Spotify").forward(req,resp);
+		}
 	}
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

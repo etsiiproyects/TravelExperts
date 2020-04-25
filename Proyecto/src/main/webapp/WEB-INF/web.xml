@@ -51,6 +51,8 @@
     <servlet-name>SpotifyAuthController</servlet-name>
     <url-pattern>/AuthController/Spotify</url-pattern>
   </servlet-mapping>
+  
+  <!--  SpotifyOAuth2Callback -->
   <servlet>
     <description></description>
     <display-name>SpotifyOAuth2Callback</display-name>
@@ -62,7 +64,7 @@
     </init-param>
     <init-param>
         <param-name>onSuccess</param-name>
-        <param-value>close</param-value>
+        <param-value>redirect:/SearchController</param-value>
     </init-param>
   </servlet>
   <servlet-mapping>

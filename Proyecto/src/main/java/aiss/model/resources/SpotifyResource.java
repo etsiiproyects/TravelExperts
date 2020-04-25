@@ -14,6 +14,7 @@ public class SpotifyResource {
 	private static final Logger log = Logger.getLogger(SpotifyResource.class.getName());
 	
 	public SpotifySearch getArtistsId(String nombre) throws UnsupportedEncodingException {
+		
 		String artista = URLEncoder.encode(nombre, "UTF-8");
 		
 		String uri = "https://api.spotify.com/v1/search?q="+artista+"&type=artist";
