@@ -28,7 +28,10 @@
 				<img class="img-tm" src="${ticket.images[0].url}">
 			</div>	
 		</c:forEach>
-	
+	</div>
+	<div class="spoty">
+	<h1> Artista ID: </h1>
+		<c:out value="${requestScope.artist.items[0].id }"/>
 	</div>
 </body>
 </html>

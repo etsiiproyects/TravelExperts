@@ -10,7 +10,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import aiss.model.resources.SpotifyResource;
 import aiss.model.resources.TMasterResource;
+import aiss.model.spotifysearch.SpotifySearch;
 import aiss.model.tmaster.TicketSearch;
 
 public class SearchController extends HttpServlet {
@@ -24,23 +26,23 @@ public class SearchController extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
 		
-		String ciudad = req.getParameter("searchQuery");
-//		String salida = req.getParameter("searchSalida");
-//		String regreso = req.getParameter("searchRegreso");
-		RequestDispatcher rd=null;
+		String query = req.getParameter("searchQuery");
+		RequestDispatcher rd = null;
 		
 		// Sample log
-//		log.log(Level.FINE, "Buscando eventos en " + ciudad + "entre el " + salida + " y el " + regreso);
-		log.log(Level.FINE, "Buscando eventos en " + ciudad);
+		log.log(Level.FINE, "Buscando eventos de " + query);
 		TMasterResource tmaster = new TMasterResource();
-//		TicketSearch tmasterResults =tmaster.getTickets(ciudad, salida, regreso);
-		TicketSearch tmasterResults =tmaster.getTickets(ciudad);
+		SpotifyResource spoty = new SpotifyResource();
+		TicketSearch tmasterResults =tmaster.getTickets(query);
+		SpotifySearch spotyResults = spoty.getArtistsId(query);
 		 
-		if(tmasterResults!=null) {
+		if(tmasterResults!=null && spotyResults!=null) {
 			rd=req.getRequestDispatcher("/success.jsp");
 			req.setAttribute("tickets", tmasterResults.getEmbedded());
+			req.setAttribute("artist", spotyResults.getArtists());
 		} else {
 			log.log(Level.SEVERE, "Objeto TMaster: " + tmasterResults);
+			log.log(Level.SEVERE, "Objeto Spotify: " + spotyResults);
 			rd=req.getRequestDispatcher("/error.jsp");
 		}
 		
