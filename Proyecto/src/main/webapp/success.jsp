@@ -20,6 +20,7 @@
 	</nav>
 
 	<div class="ticketmaster">
+		<p>Gilipollas</p>
 		<h1>Eventos</h1>
 		<c:forEach items="${requestScope.tickets.events}" var="ticket">
 			<div class="tmaster-info">
