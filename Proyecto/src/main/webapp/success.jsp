@@ -30,8 +30,14 @@
 		</c:forEach>
 	</div>
 	<div class="spoty">
-	<h1> Artista ID: </h1>
-		<c:out value="${requestScope.artist.items[0].id }"/>
+	<h1> Top canciones: </h1>
+		<c:forEach items="${requestScope.tracks}" var="track">
+			<div class="tmaster-info">
+				<span>Nombre: <c:out value="${track.name}"/></span>
+				<img class="img-tm" src="${track.images[0].url}">
+			</div>
+		
+		</c:forEach>
 	</div>
 </body>
 </html>
