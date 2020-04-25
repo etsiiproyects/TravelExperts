@@ -18,9 +18,9 @@ public class TMasterResource {
 
 	
 //	public TicketSearch getTickets(String ciu, String s, String r) throws UnsupportedEncodingException{
-	public TicketSearch getTickets(String ciu) throws UnsupportedEncodingException{	
+	public TicketSearch getTickets(String word) throws UnsupportedEncodingException {	
 		
-		String ciudad=URLEncoder.encode(ciu, "UTF-8");
+		String keyword = URLEncoder.encode(word, "UTF-8");
 		
 //		String sal[]=URLEncoder.encode(s, "UTF-8").split("/");
 //		String salida=String.format("%d-%d-%dT00:00:00Z", sal[0], sal[1], sal[2]);
@@ -31,7 +31,7 @@ public class TMasterResource {
 //		String uri="https://app.ticketmaster.com/discovery/v2/events?apikey=" + TMASTER_API_KEY + "&locale=*&startDateTime=" + salida + "&endDateTime=" + regreso +"&city=" + ciudad;
 //		log.log(Level.FINE, "TMaster URI: " + uri);
 		
-		String uri="https://app.ticketmaster.com/discovery/v2/events?apikey=" + TMASTER_API_KEY + "&city=" + ciudad;
+		String uri="https://app.ticketmaster.com/discovery/v2/events?apikey=" + TMASTER_API_KEY + "&keyword=" + keyword;
 		log.log(Level.FINE, "TMaster URI: " + uri);
 		
 		ClientResource cr= new ClientResource(uri);
