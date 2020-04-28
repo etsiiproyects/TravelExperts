@@ -2,27 +2,27 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Buscador</title>
 <link rel="stylesheet" type="text/css" href="css/buscador.css">
 </head>
 <body>
-	  <nav>
+	  <!--<nav>
 		<ul>
 
 			<li><img src="images/logo96x96.png" alt="Logo Travel Experts"></li>
-			<!--<li class="nav_bottom"><a href="AuthController/Spotify">Iniciar
-					Sesion</a></li> -->
+			<li class="nav_bottom"><a href="AuthController/Spotify">Iniciar
+					Sesion</a></li> 
 		</ul>
-	</nav>
+	</nav>-->
 
 
 	<section class="contenido">
 		<h1>Buscador</h1>
 		<div id="searchDiv">
+		
 			<form id="searchForm" action="SearchController" method="post">
 				<span>Artista:</span><input type="text" name="searchQuery" required />
-				<span>Salida: </span><input type="date" name="searchSalida">
-				<span>Regreso: </span><input type="date" name="searchRegreso">
 				<input type="submit" name="searchBtn" title="search" value="Buscar">
 			</form>
 		</div>

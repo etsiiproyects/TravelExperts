@@ -3,8 +3,11 @@ h1 {
 	font-weight: bold;
 	margin: 10px;
 	text-align: center;
-	color: #4782A5;
+	color: #8b55ac;
+	font-family: 'Monoton', cursive;
+
 }
+
 
 #searchDiv {
 	border: 1px black;
@@ -12,6 +15,7 @@ h1 {
 	display: block;
 	padding: 50px;
 	text-align: center;
+	
 }
 
 #searchForm input {
@@ -23,57 +27,29 @@ span {
 	font-size: 20px;
 	margin: 10px;
 	text-align: center;
-	color: #4782A5;
+	color: #8b55ac;
 }
 
-legend {
-	padding: 0.2em 0.5em;
-	border: 1px solid gray;
-	font-size: 90%;
-	text-align: right;
-}
 
-nav {
-	width: 100%;
-	background-color: #4782A5;
-}
-
-nav ul {
-	margin: 0;
-}
-
-nav li {
-	display: inline-block;
-	width: 100px;
-}
-
-nav li a {
-	text-align: center;
-	font-size: 22px;
-	text-decoration: none;
-	color: white;
-	font-family: 'Montserrat', sans-serif;
-}
-
-.nav_bottom {
-	float: right;
-	padding: 32px 38px;
-}
-
-.nav_bottom a:hover {
-	opacity: .5;
-	font-size: 25px;
-}
 
 body {
-	width: 99%;
+	width: 100%;
 	margin: 0;
+	background-image:
+		url("https://los40.com/los40/imagenes/2018/07/04/musica/1530694278_684908_1530701108_gigante_normal.jpg");
+	background-size: cover;
+	background-attachment: fixed;
+	background-position: left center;
+	align-items: center;
+
 }
 
 form {
 	margin: 0 auto;
 	display: block;
 	width: max-content;
+	height: max-content;
+	
 }
 
 .form_inicio {
@@ -81,9 +57,8 @@ form {
 }
 
 label {
-	margin-right: 12px;
 	font-size: 19px;
-	color: #4782A5;
+	color: #8b55ac;
 }
 
 .form_inicio input {
@@ -92,6 +67,7 @@ label {
 	padding: 2px 10px;
 	font-size: 15px;
 	float: right;
+	
 }
 
 form>input:last-child {
@@ -99,9 +75,10 @@ form>input:last-child {
 	width: 60%;
 	padding: 8px 44px;
 	float: right;
-	background-color: #4782A5;
+	background-color: #8b55ac;
 	border: none;
 	color: white;
+	font-family: 'Monoton', cursive;
 }
 
 form>input:last-child:hover {
@@ -113,9 +90,32 @@ form>input:last-child:hover {
 }
 
 .contenido {
-	display: block;
-	width: auto;
-	padding: 8px 44px;
-	float: inherit;
-	font-family: 'Montserrat', sans-serif;
+	border-radius: 10px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 60vw;
+	height: 30vh;  
+	margin-top: -15vh; 
+	margin-left:-30vw;
+	font-family: 'Monoton', cursive;
+	min-height: 300px;
+	background-color: black;
+	box-shadow: 0 0 10px black, 0 0 40px black,0 0 70px black,0 0 100px black;
+}
+
+@media screen and (max-width: 1120px) {
+	.contenido{
+	  width: 100%; 
+	  box-shadow: none;
+	  margin-left:0;
+	  left:0;
+	  top: 40%;
+	  min-width: 100px;
+	}
+	
+	#searchForm{
+		width:100%;
+	}
+ 
 }

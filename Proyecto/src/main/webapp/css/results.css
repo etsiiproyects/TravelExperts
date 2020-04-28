@@ -101,3 +101,19 @@ body {
 .tmaster-info, .spotify-track{
 	margin: 10px;
 }
+
+
+
+@media screen and (max-width: 400px) {
+
+	.contenido{
+	display: block;
+	position: relative;
+	}
+	.spotify, .ticketmaster{
+	width: 90vw;
+	height: 40vh;
+	overflow: scroll;
+	}
+}
+
