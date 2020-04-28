@@ -24,17 +24,17 @@
 				<span>Evento: <c:out value="${ticket.name}"/></span><br/>
 				<span>Fecha: <c:out value="${ticket.dates.start.localDate}"/></span><br/>
 				<span>Hora: <c:out value="${ticket.dates.start.localTime}"/></span><br/>
-				<span> Direccion: <c:out value="${ticket.embedded.venues[0].address.line1}"/></span><br/>
+				<span>Direccion: <c:out value="${ticket.embedded.venues[0].address.line1}"/></span><br/>
 				<img class="img-tm" src="${ticket.images[0].url}">
 			</div>	
 		</c:forEach>
 	</div>
-	<div class="spoty">
+	<div class="ticketmaster">
 	<h1> Top canciones: </h1>
 		<c:forEach items="${requestScope.tracks}" var="track">
 			<div class="tmaster-info">
 				<span>Nombre: <c:out value="${track.name}"/></span>
-				<img class="img-tm" src="${track.images[0].url}">
+				<img class="img-tm" src="${track.album.images[0].url}">
 			</div>
 		
 		</c:forEach>
