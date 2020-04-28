@@ -33,7 +33,7 @@
 	<h1> Top canciones: </h1>
 		<c:forEach items="${requestScope.tracks}" var="track">
 			<div class="tmaster-info">
-				<span>Nombre: <c:out value="${track.name}"/></span>
+				<span>Nombre : <c:out value="${track.name}"/></span>
 				<img class="img-tm" src="${track.album.images[0].url}">
 				<iframe src="https://open.spotify.com/embed/track/${track.id}" width="300" height="80"></iframe>
 			</div>
