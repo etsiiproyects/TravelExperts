@@ -47,6 +47,9 @@ public class SearchController extends HttpServlet {
 					req.setAttribute("tickets", tmasterResults.getEmbedded());
 				}
 				if(spotyResults != null) {
+					
+					String enlace="https://open.spotify.com/embed/artist/" + id;
+					req.setAttribute("link", enlace);
 					req.setAttribute("tracks", spotyResults.getTracks());
 				}
 				rd = req.getRequestDispatcher("/success.jsp");

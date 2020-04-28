@@ -10,7 +10,7 @@
 	<link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
 </head>
 <body>
-
+	
 	<nav>
         <ul>
             <li><img src="images/logo96x96.png" alt="Logo Travel Experts"></li>
@@ -35,9 +35,19 @@
 			<div class="tmaster-info">
 				<span>Nombre: <c:out value="${track.name}"/></span>
 				<img class="img-tm" src="${track.album.images[0].url}">
+				<iframe src="https://open.spotify.com/embed/track/${track.id}" width="300" height="80"></iframe>
+			</div>
+			
+			<div class="react-spotify">
+			
 			</div>
 		
 		</c:forEach>
+	</div>
+	
+	<div>
+	<iframe class="iframe1" src="${requestScope.link}" width="600" height="500" ></iframe>
+	
 	</div>
 </body>
 </html>
