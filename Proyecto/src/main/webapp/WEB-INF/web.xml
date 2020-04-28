@@ -62,7 +62,7 @@
     </init-param>
     <init-param>
         <param-name>onSuccess</param-name>
-        <param-value>redirect:/SearchController</param-value>
+        <param-value>redirect:/index.html</param-value>
     </init-param>
   </servlet>
   <servlet-mapping>
