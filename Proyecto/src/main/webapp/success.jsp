@@ -7,6 +7,7 @@
 	<meta charset="ISO-8859-1">
 	<title>Travel Experts</title>
 	<link rel="stylesheet" type="text/css" href="../css/results.css">
+	
 	<link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -14,6 +15,7 @@
 	<nav>
         <ul>
             <li><img src="images/logo96x96.png" alt="Logo Travel Experts"></li>
+            <li class="nav_bottom"><a href="index.html">Volver</a></li>
 		</ul>
 	</nav>
 	

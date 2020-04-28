@@ -9,7 +9,25 @@ nav ul {
 
 nav li {
 	display: inline-block;
-	width: 200px;
+	width: 100px;
+}
+
+nav li a {
+	text-align: center;
+	font-size: 22px;
+	text-decoration: none;
+	color: white;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.nav_bottom {
+	float: right;
+	padding: 32px 38px;
+}
+
+.nav_bottom a:hover {
+	opacity: .5;
+	font-size: 25px;
 }
 
 body {
@@ -78,6 +96,7 @@ body {
 	background-color: black;
 	box-sizing: content-box;
 	}
+	
 	
 .tmaster-info, .spotify-track{
 	margin: 10px;
