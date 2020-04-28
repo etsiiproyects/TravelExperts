@@ -47,24 +47,16 @@ public class SearchController extends HttpServlet {
 					req.setAttribute("tickets", tmasterResults.getEmbedded());
 				}
 				if(spotyResults != null) {
-					
-				
-					req.setAttribute("link", enlace);
 					req.setAttribute("tracks", spotyResults.getTracks());
 				}
 				rd = req.getRequestDispatcher("/success.jsp");
 			}
-//			if (tmasterResults != null && spotyResults != null) {
-//				rd = req.getRequestDispatcher("/success.jsp");
-//				req.setAttribute("tickets", tmasterResults.getEmbedded());
-//				req.setAttribute("tracks", spotyResults.getTracks());
-//			}
-		else {
-				log.log(Level.SEVERE, "Objeto TMaster: " + tmasterResults);
-				log.log(Level.SEVERE, "Objeto Spotify: " + id);
-				rd = req.getRequestDispatcher("/error.jsp");
-			}
-			rd.forward(req, resp);
+			else {
+					log.log(Level.SEVERE, "Objeto TMaster: " + tmasterResults);
+					log.log(Level.SEVERE, "Objeto Spotify: " + id);
+					rd = req.getRequestDispatcher("/error.jsp");
+				}
+				rd.forward(req, resp);
 
 		} else {
 			log.info("Intenta acceder a Spotify sin token");

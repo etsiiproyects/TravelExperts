@@ -18,10 +18,16 @@ body {
 	color: white;
 }
 
+.contenido{
+	display: flex;
+}
 .ticketmaster {
+	padding: 10px;
+	border-radius: 10px;
+	position:relative;
 	margin: 50px;
-	width: 500px;
-	background-color: #4782A5;
+	width: 25vw;
+	background-color: #0267d5;
 }
 
 .tmaster-info {
@@ -43,8 +49,36 @@ body {
 }
 
 .ticketmaster h1 {
-	background-color: #4782A5;
 	font-size: 35px;
 	font-family: 'Fjalla One', sans-serif;
 	align-items: center;
+}
+
+.spotify h1{
+	color: #1ed760;
+	font-size: 35px;
+	font-family: 'Fjalla One', sans-serif;
+	align-items: center;
+}
+
+.spotify span{
+	color: #1ed760;
+	margin: 0 25px;
+	font-size: 24px;
+	font-family: 'Fjalla One', sans-serif;
+}
+
+.spotify{
+	border: 2px #1ed760;
+	border-radius: 10px;
+	padding: 10px;
+	position: relative;
+	margin: 50px;
+	width: 25vw;
+	background-color: black;
+	box-sizing: content-box;
+	}
+	
+.tmaster-info, .spotify-track{
+	margin: 10px;
 }
