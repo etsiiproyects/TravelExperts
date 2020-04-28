@@ -42,12 +42,21 @@ public class SearchController extends HttpServlet {
 			TicketSearch tmasterResults = tmaster.getTickets(query);
 			String id = spoty.getArtistsId(query).getArtists().getItems().get(0).getId();
 			TracksSearch spotyResults = spotytracks.getArtistTrack(id);
-
-			if (tmasterResults != null && spotyResults != null) {
+			if(tmasterResults != null || spotyResults != null) {
+				if(tmasterResults != null) {
+					req.setAttribute("tickets", tmasterResults.getEmbedded());
+				}
+				if(spotyResults != null) {
+					req.setAttribute("tracks", spotyResults.getTracks());
+				}
 				rd = req.getRequestDispatcher("/success.jsp");
-				req.setAttribute("tickets", tmasterResults.getEmbedded());
-				req.setAttribute("tracks", spotyResults.getTracks());
-			} else {
+			}
+//			if (tmasterResults != null && spotyResults != null) {
+//				rd = req.getRequestDispatcher("/success.jsp");
+//				req.setAttribute("tickets", tmasterResults.getEmbedded());
+//				req.setAttribute("tracks", spotyResults.getTracks());
+//			}
+		else {
 				log.log(Level.SEVERE, "Objeto TMaster: " + tmasterResults);
 				log.log(Level.SEVERE, "Objeto Spotify: " + id);
 				rd = req.getRequestDispatcher("/error.jsp");
