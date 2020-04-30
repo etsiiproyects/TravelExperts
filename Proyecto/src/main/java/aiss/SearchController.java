@@ -27,17 +27,18 @@ public class SearchController extends HttpServlet {
 	}
 
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
-		String accessToken = (String) req.getSession().getAttribute("Spotify-token");
+		String accessTokenSpotify = (String) req.getSession().getAttribute("Spotify-token");
+		String accessTokenGC = (String) req.getSession().getAttribute("GoogleCalendar-token");
 		
-		if (accessToken != null && !"".equals(accessToken)) {
+		if (accessTokenSpotify != null && !"".equals(accessTokenSpotify)) {
 			String query = req.getParameter("searchQuery");
 			RequestDispatcher rd = null;
 
 			log.log(Level.FINE, "Buscando eventos de " + query);
 			
 			TMasterResource tmaster = new TMasterResource();
-			SpotifyResource spoty = new SpotifyResource(accessToken);
-			SpotifyTrackResource spotytracks = new SpotifyTrackResource(accessToken);
+			SpotifyResource spoty = new SpotifyResource(accessTokenSpotify);
+			SpotifyTrackResource spotytracks = new SpotifyTrackResource(accessTokenSpotify);
 			
 			TicketSearch tmasterResults = tmaster.getTickets(query);
 			String id = spoty.getArtistsId(query).getArtists().getItems().get(0).getId();

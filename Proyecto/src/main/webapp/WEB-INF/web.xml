@@ -13,6 +13,16 @@
         <servlet-name>SearchController</servlet-name>
         <url-pattern>/SearchController</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <description></description>
+        <display-name>SearchControllerGC</display-name>
+        <servlet-name>SearchControllerGC</servlet-name>
+        <servlet-class>aiss.SearchControllerGC</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SearchControllerGC</servlet-name>
+        <url-pattern>/SearchControllerGC</url-pattern>
+    </servlet-mapping>
 
     <welcome-file-list>
         <welcome-file>intro.html</welcome-file>
@@ -68,6 +78,40 @@
   <servlet-mapping>
     <servlet-name>SpotifyOAuth2Callback</servlet-name>
     <url-pattern>/oauth2callback/Spotify</url-pattern>
+  </servlet-mapping>
+  
+    <!--    Google Calendar -->
+  <servlet>
+    <description></description>
+    <servlet-name>GoogleCalendarAuthController</servlet-name>
+    <servlet-class>aiss.controller.oauth.GenericAuthController</servlet-class>
+    <init-param>
+        <param-name>provider</param-name>
+        <param-value>GoogleCalendar</param-value>
+    </init-param>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GoogleCalendarAuthController</servlet-name>
+    <url-pattern>/AuthController/GoogleCalendar</url-pattern>
+  </servlet-mapping>
+  
+  <!--  GCalendarOAuth2Callback -->
+  <servlet>
+    <description></description>
+    <servlet-name>GoogleCalendarOAuth2Callback</servlet-name>
+    <servlet-class>aiss.controller.oauth.OAuth2Callback</servlet-class>
+    <init-param>
+        <param-name>provider</param-name>
+        <param-value>GoogleCalendar</param-value>
+    </init-param>
+    <init-param>
+        <param-name>onSuccess</param-name>
+        <param-value>redirect:/index.html</param-value>
+    </init-param>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GoogleCalendarOAuth2Callback</servlet-name>
+    <url-pattern>/oauth2callback/GoogleCalendar</url-pattern>
   </servlet-mapping>
 
 </web-app>

@@ -5,7 +5,7 @@
 <html>
 <head>
 	<meta charset="ISO-8859-1">
-	<title>Travel Experts</title>
+	<title>Music Experts</title>
 	<link rel="stylesheet" type="text/css" href="../css/results.css">
 	
 	<link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
@@ -47,6 +47,5 @@
 			</div>
 		</div>
 	</div>
-	<div>
 </body>
 </html>
