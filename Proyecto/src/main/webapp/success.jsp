@@ -46,6 +46,19 @@
 			</c:forEach>
 			</div>
 		</div>
+		<div class="gcalendar">
+			<h1> Eventos: </h1>
+			<div class="info">
+				<c:forEach items="${requestScope.eventos}" var="evento">
+					<div class="gcalendar-evento">
+						
+						<span>Nombre:<c:out value="${evento.summary}"/></span>
+						<span>Fecha:<c:out value="${evento.start.date}"/></span>
+					</div>
+				</c:forEach>	
+				<iframe src="https://calendar.google.com/calendar/embed?src=etsiiproyects%40gmail.com&ctz=Europe%2FMadrid" style="border: 0" width="450px" height="500px"  frameborder="0" scrolling="no"></iframe>
+			</div>
+		</div>
 	</div>
 </body>
 </html>

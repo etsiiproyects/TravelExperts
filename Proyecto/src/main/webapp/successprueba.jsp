@@ -26,6 +26,7 @@
 			<div class="info">
 				<c:forEach items="${requestScope.eventos}" var="evento">
 					<div class="gcalendar-evento">
+						<span>Fecha:<c:out value="${evento.start.date}"/></span>
 						<span>Nombre:<c:out value="${evento.summary}"/></span>
 					</div>
 				</c:forEach>	

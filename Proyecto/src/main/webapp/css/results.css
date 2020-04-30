@@ -33,7 +33,7 @@ nav li a {
 body {
 	width: auto;
 	margin: 0;
-	color: white;
+	color: black;
 }
 
 .contenido{
@@ -102,6 +102,22 @@ body {
 	margin: 10px;
 }
 
+
+.gcalendar{
+	border: 2px black;
+	border-radius: 10px;
+	padding: 10px;
+	position: relative;
+	margin: 50px;
+	width: 25vw;
+	background-color: black;
+	box-sizing: content-box;
+	color: white;
+}
+
+.gcalendar-evento{
+	color:white;
+}
 
 
 @media screen and (max-width: 1000px) {
