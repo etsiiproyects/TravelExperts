@@ -33,10 +33,12 @@ public class SearchController extends HttpServlet {
 		String accessTokenGC = (String) req.getSession().getAttribute("GoogleCalendar-token");
 		
 		if ((accessTokenSpotify != null && !"".equals(accessTokenSpotify)) && (accessTokenGC != null && !"".equals(accessTokenGC))) {
-			String query = req.getParameter("searchQuery");
+			String artista = req.getParameter("searchQuery");
+			String correo = req.getParameter("correoE");
 			RequestDispatcher rd = null;
 
-			log.log(Level.FINE, "Buscando eventos de " + query);
+			log.log(Level.FINE, "Buscando eventos de " + artista);
+			log.log(Level.FINE, "Buscando calendario de " + correo);
 			
 			TMasterResource tmaster = new TMasterResource();
 			SpotifyResource spoty = new SpotifyResource(accessTokenSpotify);
@@ -44,10 +46,10 @@ public class SearchController extends HttpServlet {
 			GCalendarResource gcalendar = new GCalendarResource(accessTokenGC);
 			
 			
-			TicketSearch tmasterResults = tmaster.getTickets(query);
-			String id = spoty.getArtistsId(query).getArtists().getItems().get(0).getId();
+			TicketSearch tmasterResults = tmaster.getTickets(artista);
+			String id = spoty.getArtistsId(artista).getArtists().getItems().get(0).getId();
 			TracksSearch spotyResults = spotytracks.getArtistTrack(id);
-			GCalendarSearch gcSearch = gcalendar.getEvents("etsiiproyects@gmail.com");
+			GCalendarSearch gcSearch = gcalendar.getEvents(correo);
 			if(tmasterResults != null || spotyResults != null || gcSearch!=null) {
 				if(tmasterResults != null) {
 					req.setAttribute("tickets", tmasterResults.getEmbedded());

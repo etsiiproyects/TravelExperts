@@ -20,7 +20,7 @@ public class GCalendarResource {
 	public GCalendarResource(String access_token) {
 		this.access_token = access_token;
 	}
-	
+
 	public GCalendarSearch getEvents(String id) throws UnsupportedEncodingException {
 		String mail = URLEncoder.encode(id, "UTF-8");
 		String uri = "https://www.googleapis.com/calendar/v3/calendars/"+mail+"/events?&key="+TCALENDAR_API_KEY;
