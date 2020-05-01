@@ -56,7 +56,7 @@
 						<span>Fecha:<c:out value="${evento.start.date}"/></span>
 					</div>
 				</c:forEach>	
-				<iframe src="https://calendar.google.com/calendar/embed?src=etsiiproyects%40gmail.com&ctz=Europe%2FMadrid" style="border: 0" width="450px" height="500px"  frameborder="0" scrolling="no"></iframe>
+				<iframe src="https://calendar.google.com/calendar/embed?src=${requestScope.email}&ctz=Europe%2FMadrid" style="border: 0" width="450px" height="500px"  frameborder="0" scrolling="no"></iframe>
 			</div>
 		</div>
 	</div>

@@ -1,6 +1,7 @@
 package aiss;
 
 import java.io.IOException;
+import java.net.URLEncoder;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -58,6 +59,8 @@ public class SearchController extends HttpServlet {
 					req.setAttribute("tracks", spotyResults.getTracks());
 				}
 				if(gcSearch != null) {
+					String email = URLEncoder.encode(correo, "UTF-8");
+					req.setAttribute("email", email);
 					req.setAttribute("eventos", gcSearch.getItems());
 				}
 				rd = req.getRequestDispatcher("/success.jsp");
