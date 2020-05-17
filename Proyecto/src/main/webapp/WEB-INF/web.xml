@@ -13,7 +13,19 @@
         <servlet-name>SearchController</servlet-name>
         <url-pattern>/SearchController</url-pattern>
     </servlet-mapping>
+    
     <servlet>
+        <description></description>
+        <display-name>SearchControllerOption</display-name>
+        <servlet-name>SearchControllerOption</servlet-name>
+        <servlet-class>aiss.SearchControllerOption</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>SearchControllerOption</servlet-name>
+        <url-pattern>/SearchControllerOption</url-pattern>
+    </servlet-mapping>
+    
+<!--<servlet>
         <description></description>
         <display-name>SearchControllerGC</display-name>
         <servlet-name>SearchControllerGC</servlet-name>
@@ -23,11 +35,7 @@
         <servlet-name>SearchControllerGC</servlet-name>
         <url-pattern>/SearchControllerGC</url-pattern>
     </servlet-mapping>
-
-    <welcome-file-list>
-        <welcome-file>intro.html</welcome-file>
-    </welcome-file-list>
-
+--> 
     <!--  OAUTH SERVLETS 
 
       For each OAuth 2.0 service, you need to create two servlets: one for the initiation 
@@ -72,7 +80,7 @@
     </init-param>
     <init-param>
         <param-name>onSuccess</param-name>
-        <param-value>redirect:/index.html</param-value>
+        <param-value>redirect:/SearchControllerOption</param-value>
     </init-param>
   </servlet>
   <servlet-mapping>
@@ -106,7 +114,7 @@
     </init-param>
     <init-param>
         <param-name>onSuccess</param-name>
-        <param-value>redirect:/index.html</param-value>
+        <param-value>redirect:/SearchControllerOption</param-value>
     </init-param>
   </servlet>
   <servlet-mapping>

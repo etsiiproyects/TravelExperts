@@ -16,7 +16,6 @@ import aiss.model.resources.GCalendarResource;
 import aiss.model.resources.SpotifyResource;
 import aiss.model.resources.SpotifyTrackResource;
 import aiss.model.resources.TMasterResource;
-import aiss.model.spotifysearch.SpotifySearch;
 import aiss.model.spotifytracks.TracksSearch;
 import aiss.model.tmaster.TicketSearch;
 

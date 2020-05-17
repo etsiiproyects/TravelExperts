@@ -36,18 +36,26 @@
 			</div>
 		</div>
 		<div class="spotify">
-			<h1> Top canciones: </h1>
-			<div class="info">
-			<c:forEach items="${requestScope.tracks}" var="track">
-				<div class="spotify-track">
-					<span>Nombre: <c:out value="${track.name}"/></span>
-					<iframe src="https://open.spotify.com/embed/track/${track.id}"width="100%" height="80"></iframe>
+		<% if (request.getAttribute("spot").toString()=="true") { %>
+			
+				<h1> Top canciones: </h1>
+				<div class="info">
+				<c:forEach items="${requestScope.tracks}" var="track">
+					<div class="spotify-track">
+						<span>Nombre: <c:out value="${track.name}"/></span>
+						<iframe src="https://open.spotify.com/embed/track/${track.id}"width="100%" height="80"></iframe>
+					</div>
+				</c:forEach>
 				</div>
-			</c:forEach>
-			</div>
-		</div>
+			
+		<% } else{ %>
+			<a href="AuthController/Spotify"> Inicia sesion en Spotify </a>
+			
+		<% } %>
+		  </div>
 		<div class="gcalendar">
-			<h1> Eventos: </h1>
+		<% if (request.getAttribute("gc").toString()=="true") { %>
+				<h1> Calendario: </h1>
 			<div class="info">
 				<c:forEach items="${requestScope.eventos}" var="evento">
 					<div class="gcalendar-evento">
@@ -58,6 +66,9 @@
 				</c:forEach>	
 				<iframe src="https://calendar.google.com/calendar/embed?src=${requestScope.email}&ctz=Europe%2FMadrid" style="border: 0" width="450px" height="500px"  frameborder="0" scrolling="no"></iframe>
 			</div>
+		<% } else{ %>
+			<a href="AuthController/GoogleCalendar"> Inicia sesion en Google Calendar </a>
+		<% } %>
 		</div>
 	</div>
 </body>

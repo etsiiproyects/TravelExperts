@@ -2,7 +2,6 @@ nav {
 	width: 100%;
 	background-color: #4782A5;
 }
-
 nav ul {
 	margin: 0;
 }
@@ -34,6 +33,11 @@ body {
 	width: auto;
 	margin: 0;
 	color: black;
+	background-image:
+		url("https://los40.com/los40/imagenes/2018/07/04/musica/1530694278_684908_1530701108_gigante_normal.jpg");
+	background-size: cover;
+	background-attachment: fixed;
+	background-position: left center;
 }
 
 .contenido{
@@ -97,7 +101,11 @@ body {
 	box-sizing: content-box;
 	}
 	
-	
+.spotify a{
+	background-color: white;
+	text-decoration: none;
+	font-size: 30px;
+}
 .tmaster-info, .spotify-track{
 	margin: 10px;
 }
