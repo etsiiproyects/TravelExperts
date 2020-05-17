@@ -1,0 +1,144 @@
+nav {
+	width: 100%;
+	background-color: #4782A5;
+}
+nav ul {
+	margin: 0;
+}
+
+nav li {
+	display: inline-block;
+	width: 100px;
+}
+
+nav li a {
+	text-align: center;
+	font-size: 22px;
+	text-decoration: none;
+	color: white;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.nav_bottom {
+	float: right;
+	padding: 32px 38px;
+}
+
+.nav_bottom a:hover {
+	opacity: .5;
+	font-size: 25px;
+}
+
+body {
+	width: auto;
+	margin: 0;
+	color: black;
+	background-image:
+		url("https://los40.com/los40/imagenes/2018/07/04/musica/1530694278_684908_1530701108_gigante_normal.jpg");
+	background-size: cover;
+	background-attachment: fixed;
+	background-position: left center;
+}
+
+.contenido{
+	display: flex;
+}
+.ticketmaster {
+	padding: 10px;
+	border-radius: 10px;
+	position:relative;
+	margin: 50px;
+	width: 25vw;
+	background-color: #0267d5;
+}
+
+.tmaster-info {
+	border: 1px solid;
+	margin: 10px;
+}
+
+.img-tm {
+	width: 300px;
+	margin: auto;
+	display: block;
+}
+
+
+.ticketmaster span {
+	margin: 0 25px;
+	font-size: 24px;
+	font-family: 'Fjalla One', sans-serif;
+}
+
+.ticketmaster h1 {
+	font-size: 35px;
+	font-family: 'Fjalla One', sans-serif;
+	align-items: center;
+}
+
+.spotify h1{
+	color: #1ed760;
+	font-size: 35px;
+	font-family: 'Fjalla One', sans-serif;
+	align-items: center;
+}
+
+.spotify span{
+	color: #1ed760;
+	margin: 0 25px;
+	font-size: 24px;
+	font-family: 'Fjalla One', sans-serif;
+}
+
+.spotify{
+	border: 2px #1ed760;
+	border-radius: 10px;
+	padding: 10px;
+	position: relative;
+	margin: 50px;
+	width: 25vw;
+	background-color: black;
+	box-sizing: content-box;
+	}
+	
+.spotify a{
+	background-color: white;
+	text-decoration: none;
+	font-size: 30px;
+}
+.tmaster-info, .spotify-track{
+	margin: 10px;
+}
+
+
+.gcalendar{
+	border: 2px black;
+	border-radius: 10px;
+	padding: 10px;
+	position: relative;
+	margin: 50px;
+	width: 25vw;
+	background-color: black;
+	box-sizing: content-box;
+	color: white;
+}
+
+.gcalendar-evento{
+	color:white;
+}
+
+
+@media screen and (max-width: 1000px) {
+	
+	.contenido{
+	display: block;
+	position: relative;
+	}
+	
+	.spotify, .ticketmaster{
+	width: 90vw;
+	height: 40vh;
+	overflow: scroll;
+	}
+ 
+}

@@ -1,0 +1,54 @@
+body {
+	background-image:
+		url("https://los40.com/los40/imagenes/2018/07/04/musica/1530694278_684908_1530701108_gigante_normal.jpg");
+	background-size: cover;
+	background-attachment: fixed;
+	background-position: left center;
+	
+	
+}
+
+
+div{
+	padding: 0.5px auto;
+	display: block;
+	margin: 15% auto;
+	width: 700px;
+	height: 350px;
+	background-color: rgba(180,180,180,.7);
+}
+
+h1{
+	font-family: 'Monoton', cursive;
+	text-align: center;
+	font-size:55px;
+	color:#331a2b;
+}
+
+
+
+img{
+	width:125px;
+	margin: auto 7% 0;
+}
+
+.buscar{
+	margin:30px auto;
+	border-radius:10px;
+	text-align:center;
+	width: 275px;
+	height: auto;
+	padding:2px;
+	background-color:#331a2b;
+	font-family: 'Monoton', cursive;
+	font-family: 'Hind Guntur', sans-serif;
+	font-size:20px;
+	color:#c35397;
+}
+
+a {
+	text-decoration: none;
+}
+.buscar:hover{
+	opacity:.9;
+}

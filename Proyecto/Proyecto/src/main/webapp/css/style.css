@@ -1,0 +1,125 @@
+nav {
+	width: 100%;
+	background-color: #4782A5;
+}
+
+nav ul {
+	margin: 0;
+}
+
+nav li {
+	display: inline-block;
+	width: 200px;
+}
+
+nav li a {
+	text-align: center;
+	font-size: 22px;
+	text-decoration: none;
+	color: white;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.nav_bottom {
+	float: right;
+	padding: 32px 38px;
+}
+
+.nav_bottom a:hover {
+	opacity: .5;
+	font-size: 25px;
+}
+
+body {
+	width: auto;
+	margin: 0;
+}
+
+h1 {
+	margin-top: 150px;
+	text-align: center;
+	color: #4782A5;
+}
+
+.contenido {
+	display: block;
+	width: auto;
+	padding: 8px 44px;
+	float: inherit;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.boton:hover {
+	padding: 1.1% 10%;
+	opacity: .5;
+}
+
+section ul {
+	text-align: center;
+	justify-content: center;
+	/*margin: 20px 130px 0 130px;*/
+	height: 20px;
+	padding: 3% 10%;
+}
+
+.boton {
+	position: relative;
+	margin: auto auto;
+	display: inline-block;
+	padding: 1% 10%;
+	width: auto;
+	background-color: #4782A5;
+	border-radius: 10px;
+	border-style: solid;
+}
+
+section a {
+	text-decoration: none;
+	color: white;
+	text-decoration-style: solid;
+	font-family: 'Montserrat', sans-serif;
+}
+
+/*.images{
+    margin:0 300px;
+}
+
+.image{
+    margin: 0 100px 0 95px;
+    width: 150px;
+}*/
+.images {
+	margin: 0 21vw 0 21vw;
+}
+
+.image {
+	margin: 0 9.8vw 0 0;
+	width: 150px;
+}
+
+#footer_body {
+	display: flex;
+	text-align-last: left;
+}
+
+footer {
+	width: 100%;
+	min-width: 900px;
+	position: absolute;
+	bottom: 0px;
+	padding: 40px 30px;
+	color: #4782A5;
+	font-family: 'Montserrat', sans-serif;
+}
+
+footer li {
+	list-style: none;
+}
+
+#correo li {
+	list-style-image: url(../images/correo15x15.png);
+}
+
+.columna {
+	width: 33%;
+}

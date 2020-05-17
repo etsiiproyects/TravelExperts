@@ -1,0 +1,16 @@
+{
+    "GoogleCalendar": { 
+        "tokenUrl": "https://www.googleapis.com/oauth2/v4/token",
+        "clientId": "139650672846-4ijtlnd2dp5cmbkfi669eotsa4gus7s1.apps.googleusercontent.com",
+        "clientSecret": "9UNsI8gWzyDRcNK31AOgy0Xu",
+        "authorizationFormUrl": "https://accounts.google.com/o/oauth2/v2/auth",
+        "scopes": ["https://www.googleapis.com/auth/calendar.events"]
+    },
+    "Spotify": {
+        "tokenUrl": "https://accounts.spotify.com/api/token",
+        "clientId": "9da31c1437794f1487b865e6b24ce5ee",
+        "clientSecret": "fb2db41274c745ea85d8477d8ccaf8d8",
+        "authorizationFormUrl": "https://accounts.spotify.com/authorize",
+        "scopes": ["streaming"]
+    }
+}		
