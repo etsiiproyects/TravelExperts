@@ -70,6 +70,8 @@
 			<a href="AuthController/GoogleCalendar"> Inicia sesion en Google Calendar </a>
 		<% } %>
 		</div>
+		
+		<a href=""AuthController/Spotify""><div>Inicia Sesion en spotify Spotify</div></a>
 	</div>
 </body>
 </html>

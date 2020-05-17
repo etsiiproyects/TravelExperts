@@ -8,6 +8,8 @@ import java.util.logging.Logger;
 import org.restlet.data.ChallengeResponse;
 import org.restlet.data.ChallengeScheme;
 import org.restlet.resource.ClientResource;
+import org.restlet.resource.ResourceException;
+
 
 import aiss.model.gcalendar.GCalendarSearch;
 
@@ -37,5 +39,59 @@ public class GCalendarResource {
 		
 		return gcSearch;
 	}
-
+	
+	public GCalendarResource addEvent(GCalendarResource gc) {
+		String uri = "https://www.googleapis.com/calendar/v3/users/me/calendarList?key=" + TCALENDAR_API_KEY;
+		ClientResource cr = null;
+		GCalendarResource resultCalendar = null;
+		try {
+			cr = new ClientResource(uri);
+			cr.setEntityBuffering(true);		// Needed for using RESTlet from JUnit tests
+			resultCalendar = cr.post(gc,GCalendarResource.class);
+			
+		} catch (ResourceException re) {
+			System.err.println("Error when adding the event: " + cr.getResponse().getStatus());
+		}
+		
+		return resultCalendar;
+	}
+	
+	public boolean updateEvent(GCalendarResource gc, String id) throws UnsupportedEncodingException  {
+		String mail = URLEncoder.encode(id,"UTF-8");
+		String uri = "https://www.googleapis.com/calendar/v3/users/me/calendarList/"+mail+"?key="+ TCALENDAR_API_KEY;
+		ClientResource cr = null;
+		boolean success = true;
+		try {
+			cr = new ClientResource(uri);
+			cr.setEntityBuffering(true);		// Needed for using RESTlet from JUnit tests
+			cr.put(gc);
+			
+			
+		} catch (ResourceException re) {
+			System.err.println("Error when updating the event: " + cr.getResponse().getStatus());
+			success = false;
+		}
+		
+		return success;
+	}
+	
+	public boolean deleteEvent(String eventId, String id) throws UnsupportedEncodingException{
+		String mail = URLEncoder.encode(id,"UTF-8");
+		String uri = "https://www.googleapis.com/calendar/v3/users/me/calendarList/"+mail+"?key="+ TCALENDAR_API_KEY;
+		ClientResource cr = null;
+		boolean success = true;
+		try {
+			cr = new ClientResource(uri + "/" + eventId);
+			cr.setEntityBuffering(true);		// Needed for using RESTlet from JUnit tests
+			cr.delete();
+			
+		} catch (ResourceException re) {
+			System.err.println("Error when deleting the event: " + cr.getResponse().getStatus());
+			success = false;
+		}
+		
+		return success;
+	}
+	
+	
 }
