@@ -59,6 +59,8 @@
 				<iframe src="https://calendar.google.com/calendar/embed?src=${requestScope.email}&ctz=Europe%2FMadrid" style="border: 0" width="450px" height="500px"  frameborder="0" scrolling="no"></iframe>
 			</div>
 		</div>
+		
+		<a href=""AuthController/Spotify""><div>Inicia Sesion en spotify Spotify</div></a>
 	</div>
 </body>
 </html>
