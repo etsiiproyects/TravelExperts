@@ -3,10 +3,11 @@
     xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee"
     xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
     version="2.5">
+    
    <welcome-file-list>
 		<welcome-file>intro.html</welcome-file>
 	</welcome-file-list>
-   
+   <!--  
     <servlet>
         <description></description>
         <display-name>SearchController</display-name>
@@ -17,7 +18,7 @@
         <servlet-name>SearchController</servlet-name>
         <url-pattern>/SearchController</url-pattern>
     </servlet-mapping>
-    
+    -->
     <servlet>
         <description></description>
         <display-name>SearchControllerOption</display-name>
@@ -28,6 +29,18 @@
         <servlet-name>SearchControllerOption</servlet-name>
         <url-pattern>/SearchControllerOption</url-pattern>
     </servlet-mapping>
+    
+    <servlet>
+        <description></description>
+        <display-name>AddEventController</display-name>
+        <servlet-name>AddEventController</servlet-name>
+        <servlet-class>aiss.AddEventController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AddEventController</servlet-name>
+        <url-pattern>/addEvent</url-pattern>
+    </servlet-mapping>
+    
     
 <!--<servlet>
         <description></description>

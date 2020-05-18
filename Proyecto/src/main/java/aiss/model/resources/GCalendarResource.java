@@ -10,7 +10,7 @@ import org.restlet.data.ChallengeScheme;
 import org.restlet.resource.ClientResource;
 import org.restlet.resource.ResourceException;
 
-
+import aiss.model.gcalendar.Event;
 import aiss.model.gcalendar.GCalendarSearch;
 
 public class GCalendarResource {
@@ -22,6 +22,7 @@ public class GCalendarResource {
 	public GCalendarResource(String access_token) {
 		this.access_token = access_token;
 	}
+	
 
 	public GCalendarSearch getEvents(String id) throws UnsupportedEncodingException {
 		String mail = URLEncoder.encode(id, "UTF-8");
@@ -40,20 +41,20 @@ public class GCalendarResource {
 		return gcSearch;
 	}
 	
-	public GCalendarResource addEvent(GCalendarResource gc) {
-		String uri = "https://www.googleapis.com/calendar/v3/users/me/calendarList?key=" + TCALENDAR_API_KEY;
+	public Event addEvent(Event event, String email) throws UnsupportedEncodingException  {
+		
+		String correo = URLEncoder.encode(email, "UTF-8");
+		String uri = "https://www.googleapis.com/calendar/v3/calendars/" +correo+ "/events?key=" + TCALENDAR_API_KEY;
 		ClientResource cr = null;
-		GCalendarResource resultCalendar = null;
+		Event events = null;
 		try {
 			cr = new ClientResource(uri);
 			cr.setEntityBuffering(true);		// Needed for using RESTlet from JUnit tests
-			resultCalendar = cr.post(gc,GCalendarResource.class);
-			
+			events = cr.post(event,Event.class);
 		} catch (ResourceException re) {
 			System.err.println("Error when adding the event: " + cr.getResponse().getStatus());
 		}
-		
-		return resultCalendar;
+		return events;
 	}
 	
 	public boolean updateEvent(GCalendarResource gc, String id) throws UnsupportedEncodingException  {

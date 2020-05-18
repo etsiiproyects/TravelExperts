@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
@@ -20,17 +20,25 @@
 	</nav>
 	
 
+
 	<div class="contenido">
 		<div class="ticketmaster">
 			<h1> Eventos </h1>
 			<div class="info">
 			<c:forEach items="${requestScope.tickets.events}" var="ticket">
 				<div class="tmaster-info">
+				<form action="addEvent" method="post" accept-charset="utf-8">
 					<span>Evento: <c:out value="${ticket.name}"/></span><br/>
+					<input id="nombre" name="nombre" type="hidden" value="${ticket.name}"> 
 					<span>Fecha: <c:out value="${ticket.dates.start.localDate}"/></span><br/>
+					<input id="fecha" name="fecha" type="hidden" value="${ticket.dates.start.localDate}"> 
 					<span>Hora: <c:out value="${ticket.dates.start.localTime}"/></span><br/>
+					<input id="hora" name="hora" type="hidden" value="${ticket.dates.start.localTime}"> 
 					<span>Direccion: <c:out value="${ticket.embedded.venues[0].address.line1}"/></span><br/>
+					<input id="direccion" name="direccion" type="hidden" value="${ticket.embedded.venues[0].address.line1}"> 
 					<img class="img-tm" src="${ticket.images[0].url}">
+					<button type="submit" class="button">Add to calendar</button>
+				</form>
 				</div>	
 			</c:forEach>
 			</div>
@@ -64,7 +72,7 @@
 						<span>Fecha:<c:out value="${evento.start.date}"/></span>
 					</div>
 				</c:forEach>
-				<a href="addevent.html"><div class="buscar"> Añadir evento </div></a>
+				<a href="addevent.html"><div class="buscar"> AÃ±adir evento </div></a>
 				<iframe src="https://calendar.google.com/calendar/embed?src=${requestScope.email}&ctz=Europe%2FMadrid" style="border: 0" width="450px" height="500px"  frameborder="0" scrolling="no"></iframe>
 			</div>
 		<% } else{ %>
