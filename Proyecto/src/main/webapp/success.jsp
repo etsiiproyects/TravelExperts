@@ -63,7 +63,8 @@
 						<span>Nombre:<c:out value="${evento.summary}"/></span>
 						<span>Fecha:<c:out value="${evento.start.date}"/></span>
 					</div>
-				</c:forEach>	
+				</c:forEach>
+				<a href="addevent.html"><div class="buscar"> Añadir evento </div></a>
 				<iframe src="https://calendar.google.com/calendar/embed?src=${requestScope.email}&ctz=Europe%2FMadrid" style="border: 0" width="450px" height="500px"  frameborder="0" scrolling="no"></iframe>
 			</div>
 		<% } else{ %>
