@@ -106,6 +106,7 @@ body {
 	text-decoration: none;
 	font-size: 30px;
 }
+
 .tmaster-info, .spotify-track{
 	margin: 10px;
 }
@@ -127,6 +128,13 @@ body {
 	color:white;
 }
 
+.boton{
+	width: 100%;
+	background-color: #1ed760;
+	color: black;
+	height: 30px;
+	
+}
 
 @media screen and (max-width: 1000px) {
 	
