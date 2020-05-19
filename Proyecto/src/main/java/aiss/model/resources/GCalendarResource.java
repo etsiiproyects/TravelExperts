@@ -41,20 +41,20 @@ public class GCalendarResource {
 		return gcSearch;
 	}
 	
-	public Event addEvent(Event event, String email) throws UnsupportedEncodingException  {
+	public GCalendarSearch addEvent(Event event, String email) throws UnsupportedEncodingException  {
 		
 		String correo = URLEncoder.encode(email, "UTF-8");
 		String uri = "https://www.googleapis.com/calendar/v3/calendars/" +correo+ "/events?key=" + TCALENDAR_API_KEY;
 		ClientResource cr = null;
-		Event events = null;
+		GCalendarSearch resultEvent = null;
 		try {
 			cr = new ClientResource(uri);
 			cr.setEntityBuffering(true);		// Needed for using RESTlet from JUnit tests
-			events = cr.post(event,Event.class);
+			resultEvent = cr.post(event,GCalendarSearch.class);
 		} catch (ResourceException re) {
 			System.err.println("Error when adding the event: " + cr.getResponse().getStatus());
 		}
-		return events;
+		return resultEvent;
 	}
 	
 	public boolean updateEvent(GCalendarResource gc, String id) throws UnsupportedEncodingException  {
@@ -96,3 +96,7 @@ public class GCalendarResource {
 	
 	
 }
+
+
+
+
