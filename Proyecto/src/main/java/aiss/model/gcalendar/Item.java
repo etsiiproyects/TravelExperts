@@ -24,6 +24,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "organizer",
     "start",
     "end",
+    "location",
     "iCalUID",
     "sequence",
     "reminders",
@@ -55,6 +56,8 @@ public class Item {
     private Start start;
     @JsonProperty("end")
     private End end;
+    @JsonProperty("location")
+    private String location;
     @JsonProperty("iCalUID")
     private String iCalUID;
     @JsonProperty("sequence")
@@ -186,6 +189,15 @@ public class Item {
         this.end = end;
     }
 
+    @JsonProperty("location")
+    public String getLocation() {
+    	return location;
+    }
+    
+    @JsonProperty("location")
+    public void setLocation(String location) {
+    	this.location = location;
+    }
     @JsonProperty("iCalUID")
     public String getICalUID() {
         return iCalUID;

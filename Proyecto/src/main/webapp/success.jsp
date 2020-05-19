@@ -44,15 +44,20 @@
 			</div>
 		</div>
 		<div class="spotify">
-		<% if (request.getAttribute("spot").toString()=="true") { %>
+		<% if (request.getAttribute("spot").toString()=="true") { 
+		
+				Integer i = 0; %>
 			
 				<h1> Top canciones: </h1>
+				<button type="button" class="boton" onclick="mostrar()"> All songs </button>
 				<div class="info">
 				<c:forEach items="${requestScope.tracks}" var="track">
-					<div class="spotify-track">
+					<div id="<%= i %>" class="spotify-track"> 
 						<span>Nombre: <c:out value="${track.name}"/></span>
 						<iframe src="https://open.spotify.com/embed/track/${track.id}"width="100%" height="80"></iframe>
+						<button type="button" class="boton" onclick="ocultar(<%=i%>)"> Delete </button>
 					</div>
+					<% i++; %>
 				</c:forEach>
 				</div>
 			
@@ -72,7 +77,6 @@
 						<span>Fecha:<c:out value="${evento.start.date}"/></span>
 					</div>
 				</c:forEach>
-				<a href="addevent.html"><div class="buscar"> Añadir evento </div></a>
 				<iframe src="https://calendar.google.com/calendar/embed?src=${requestScope.email}&ctz=Europe%2FMadrid" style="border: 0" width="450px" height="500px"  frameborder="0" scrolling="no"></iframe>
 			</div>
 		<% } else{ %>
@@ -80,7 +84,24 @@
 		<% } %>
 		</div>
 		
-		<a href=""AuthController/Spotify""><div>Inicia Sesion en spotify Spotify</div></a>
 	</div>
+	
+	<script>
+	function ocultar(i){
+		var id = i;
+		document.getElementById(id).style.display = 'none';
+	}
+	
+	function mostrar(){
+		var elementos = document.getElementsByClassName("spotify-track");
+		 console.log(elementos);
+		for (var i = 0; i < elementos.length; i++){
+			
+			var elemento = elementos[i];
+			console.log(elemento);
+			elemento.style.display = 'block';
+		}
+	}
+	</script>
 </body>
 </html>
