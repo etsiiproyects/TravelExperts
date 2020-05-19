@@ -42,7 +42,7 @@ public class GCalendarResource {
 		return gcSearch;
 	}
 	
-    public GCalendarResource addEvent(GCalendarSearch event, String email) throws UnsupportedEncodingException  {
+    public GCalendarResource addEvent(Item event, String email) throws UnsupportedEncodingException  {
        
         String correo = URLEncoder.encode(email, "UTF-8");
         String uri = "https://www.googleapis.com/calendar/v3/calendars/" + correo + "/events?key=" + TCALENDAR_API_KEY;
