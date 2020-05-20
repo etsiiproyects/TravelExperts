@@ -38,7 +38,9 @@ public class SearchController extends HttpServlet {
 			RequestDispatcher rd = null;
 
 			log.log(Level.FINE, "Buscando eventos de " + artista);
+			log.log(Level.FINE, "Access token Spotify" + accessTokenSpotify);
 			log.log(Level.FINE, "Buscando calendario de " + correo);
+			log.log(Level.FINE, "Access token de GC" + accessTokenGC);
 			
 			TMasterResource tmaster = new TMasterResource();
 			SpotifyResource spoty = new SpotifyResource(accessTokenSpotify);
