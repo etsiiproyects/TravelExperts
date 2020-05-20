@@ -58,11 +58,13 @@ public class SearchController extends HttpServlet {
 				}
 				if(spotyResults != null) {
 					req.setAttribute("tracks", spotyResults.getTracks());
+//					req.setAttribute("tokenSpoti", accessTokenSpotify);
 				}
 				if(gcSearch != null) {
 					String email = URLEncoder.encode(correo, "UTF-8");
 					req.setAttribute("email", email);
 					req.setAttribute("eventos", gcSearch.getItems());
+//					req.setAttribute("tokenGC", accessTokenGC);
 				}
 				rd = req.getRequestDispatcher("/success.jsp");
 			}
