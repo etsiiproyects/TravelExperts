@@ -10,6 +10,12 @@
 	
 	<link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
 </head>
+<style>
+.token{
+background-color: white;
+width: 100%;
+}
+</style>
 <body>
 	
 	<nav>
@@ -19,6 +25,9 @@
 		</ul>
 	</nav>
 	
+	<p class="token">Spotify:<c:out value="${requestScope.tokenS}"/> </p>
+	<p class="token">GCalendar:<c:out value="${requestScope.tokenGC}"/> </p>
+	<p class="token">correo:<c:out value="${requestScope.email}"/> </p>
 
 
 	<div class="contenido">

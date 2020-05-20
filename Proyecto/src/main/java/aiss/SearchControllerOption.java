@@ -34,6 +34,9 @@ public class SearchControllerOption extends HttpServlet {
 		String accessTokenSpotify = (String) req.getSession().getAttribute("Spotify-token");
 		String accessTokenGC = (String) req.getSession().getAttribute("GoogleCalendar-token");
 	
+		req.setAttribute("tokenS", accessTokenSpotify);
+		req.setAttribute("tokenGC", accessTokenGC);
+		
 		String artista = "";
 		String correoE = "";
 		
