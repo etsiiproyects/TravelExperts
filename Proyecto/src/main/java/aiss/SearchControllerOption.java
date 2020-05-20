@@ -40,12 +40,13 @@ public class SearchControllerOption extends HttpServlet {
 		String artista = "";
 		String correoE = "";
 		
-		if(req.getSession().getAttribute("artista") == null || req.getSession().getAttribute("artista") == "") {
-			req.getSession().setAttribute("artista", req.getParameter("searchQuery"));
-			artista = (String) req.getSession().getAttribute("artista");
-		}else {
-			artista = (String) req.getSession().getAttribute("artista");
+		if(req.getParameter("searchQuery")!=null) {
+			if(req.getSession().getAttribute("artista") == null || req.getSession().getAttribute("artista") == "" || req.getParameter("searchQuery")!=artista) {
+				req.getSession().setAttribute("artista", req.getParameter("searchQuery"));
+			}
 		}
+		
+		artista = (String) req.getSession().getAttribute("artista");
 		
 		if(req.getSession().getAttribute("correo") == null || req.getSession().getAttribute("correo") == "") {
 			req.getSession().setAttribute("correo", req.getParameter("correoE"));

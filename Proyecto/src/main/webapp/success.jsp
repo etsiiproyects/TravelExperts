@@ -7,29 +7,21 @@
 	<meta charset="ISO-8859-1">
 	<title>Music Experts</title>
 	<link rel="stylesheet" type="text/css" href="../css/results.css">
-	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
 </head>
-<style>
-.token{
-background-color: white;
-width: 100%;
-}
-</style>
+
 <body>
 	
-	<nav>
-        <ul>
-            <li><img src="images/logo96x96.png" alt="Logo Travel Experts"></li>
-            <li class="nav_bottom"><a href="index.html">Volver</a></li>
-		</ul>
-	</nav>
 	
+	<!--  
 	<p class="token">Spotify:<c:out value="${requestScope.tokenS}"/> </p>
 	<p class="token">GCalendar:<c:out value="${requestScope.tokenGC}"/> </p>
-	<p class="token">correo:<c:out value="${requestScope.email}"/> </p>
+	-->
 
-
+	<div class="botonB">
+	<a href="index.html"><div class="buscar"> Buscador </div></a>
+	</div>
 	<div class="contenido">
 		<div class="ticketmaster">
 			<h1> Eventos </h1>
@@ -46,7 +38,7 @@ width: 100%;
 					<span>Direccion: <c:out value="${ticket.embedded.venues[0].address.line1}"/></span><br/>
 					<input id="direccion" name="direccion" type="hidden" value="${ticket.embedded.venues[0].address.line1}"> 
 					<img class="img-tm" src="${ticket.images[0].url}">
-					<button type="submit" class="button">Add to calendar</button>
+					<button type="submit" class="addGC">Add to calendar</button>
 				</form>
 				</div>	
 			</c:forEach>

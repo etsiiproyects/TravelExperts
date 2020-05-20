@@ -1,34 +1,3 @@
-nav {
-	width: 100%;
-	background-color: #4782A5;
-}
-nav ul {
-	margin: 0;
-}
-
-nav li {
-	display: inline-block;
-	width: 100px;
-}
-
-nav li a {
-	text-align: center;
-	font-size: 22px;
-	text-decoration: none;
-	color: white;
-	font-family: 'Montserrat', sans-serif;
-}
-
-.nav_bottom {
-	float: right;
-	padding: 32px 38px;
-}
-
-.nav_bottom a:hover {
-	opacity: .5;
-	font-size: 25px;
-}
-
 body {
 	width: auto;
 	margin: 0;
@@ -133,9 +102,52 @@ body {
 	background-color: #1ed760;
 	color: black;
 	height: 30px;
-	
 }
 
+.boton:hover{
+	color:#1ed760;
+	background-color: black;
+	cursor:pointer;
+}
+
+.token{
+background-color: white;
+width: 100%;
+}
+.buscar{
+	margin:30px auto;
+	border: 5px solid #331a2b;
+	border-radius:10px;
+	text-align:center;
+	width: 100%;
+	height: auto;
+	padding:10px;
+	background-color: black;
+	font-family: 'Monoton', cursive;
+	font-family: 'Hind Guntur', sans-serif;
+	font-size:20px;
+	color:#c35397;
+}
+.addGC{
+	margin-top: 5px;
+	border:0;
+	width: 100%;
+	background-color: #black;
+	color: #0267d5;
+	height: 30px;
+	cursor:pointer;
+}
+.botonB{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	
+}
+.botonB a{
+	text-decoration: none;
+	width: 30%;
+	cursor:pointer;
+}
 @media screen and (max-width: 1000px) {
 	
 	.contenido{
