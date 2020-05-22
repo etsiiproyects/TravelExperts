@@ -52,6 +52,17 @@
         <url-pattern>/PlaylistController</url-pattern>
     </servlet-mapping>
     
+    <servlet>
+        <description></description>
+        <display-name>AddSongController</display-name>
+        <servlet-name>AddSongController</servlet-name>
+        <servlet-class>aiss.AddSongController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AddSongController</servlet-name>
+        <url-pattern>/AddSongController</url-pattern>
+    </servlet-mapping>
+    
 <!--<servlet>
         <description></description>
         <display-name>SearchControllerGC</display-name>
