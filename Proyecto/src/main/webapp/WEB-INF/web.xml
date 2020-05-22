@@ -41,6 +41,16 @@
         <url-pattern>/addEvent</url-pattern>
     </servlet-mapping>
     
+    <servlet>
+        <description></description>
+        <display-name>PlaylistController</display-name>
+        <servlet-name>PlaylistController</servlet-name>
+        <servlet-class>aiss.PlaylistController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>PlaylistController</servlet-name>
+        <url-pattern>/PlaylistController</url-pattern>
+    </servlet-mapping>
     
 <!--<servlet>
         <description></description>
