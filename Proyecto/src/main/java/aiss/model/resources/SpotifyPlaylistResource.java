@@ -37,8 +37,13 @@ public class SpotifyPlaylistResource {
 		String uri = "https://api.spotify.com/v1/playlists/"+playlistId+"/tracks?uris="+song;
 		ClientResource cr = null;
 		boolean result = true;
+		
 		try {
 			cr = new ClientResource(uri);
+			ChallengeResponse chr = new ChallengeResponse(ChallengeScheme.HTTP_OAUTH_BEARER);
+			chr.setRawValue(access_token);
+	        cr.setChallengeResponse(chr);
+			
 			cr.setEntityBuffering(true);
 			cr.post(" ");
 		} catch(ResourceException e) {

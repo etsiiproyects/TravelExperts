@@ -24,6 +24,7 @@ public class AddSongController extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String accessTokenSpotify = (String) req.getSession().getAttribute("Spotify-token");
 		req.setAttribute("tokenS", accessTokenSpotify);
+		req.setAttribute("gc", "true");
 		
 		if((accessTokenSpotify != null && !"".equals(accessTokenSpotify))) {
 			req.setAttribute("spot", "true");
@@ -46,7 +47,7 @@ public class AddSongController extends HttpServlet {
 		}
 		
 		// Forward to contact list view
-		req.getRequestDispatcher("success.jsp").forward(req, resp);
+		req.getRequestDispatcher("/SearchControllerOption").forward(req, resp);
 	}
 
 	@Override
