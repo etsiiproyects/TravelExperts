@@ -27,7 +27,7 @@ public class SpotifyResource {
 	}
 	
 	public SpotifySearch getArtistsId(String nombre) throws UnsupportedEncodingException {
-		String client_id= "139650672846-4ijtlnd2dp5cmbkfi669eotsa4gus7s1.apps.googleusercontent.com";
+//		String client_id= "139650672846-4ijtlnd2dp5cmbkfi669eotsa4gus7s1.apps.googleusercontent.com";
 		String artista = URLEncoder.encode(nombre, "UTF-8");
 		String uri = "https://api.spotify.com/v1/search?q="+artista+"&type=artist";
 		

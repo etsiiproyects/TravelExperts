@@ -48,13 +48,14 @@
 		<% if (request.getAttribute("spot").toString()=="true") { 
 		
 				Integer i = 0; %>
-			
+				<form action="PlaylistController" method="post"><input type="submit" name="searchBtn" title="search" value="Ver mis playlist"></form>
 				<h1> Top canciones: </h1>
 				<button type="button" class="boton" onclick="mostrar()"> All songs </button>
 				<div class="info">
 				<c:forEach items="${requestScope.tracks}" var="track">
 					<div id="<%= i %>" class="spotify-track"> 
 						<span>Nombre: <c:out value="${track.name}"/></span>
+						<span>Uri: <c:out value="${track.uri}"></c:out></span>
 						<iframe src="https://open.spotify.com/embed/track/${track.id}"width="100%" height="80"></iframe>
 						<button type="button" class="boton" onclick="ocultar(<%=i%>)"> Delete </button>
 					</div>
