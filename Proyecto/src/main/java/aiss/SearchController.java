@@ -12,7 +12,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import aiss.model.gcalendar.GCalendarSearch;
+import aiss.model.mexperts.MExpertsSearch;
 import aiss.model.resources.GCalendarResource;
+import aiss.model.resources.MExpertsResource;
 import aiss.model.resources.SpotifyResource;
 import aiss.model.resources.SpotifyTrackResource;
 import aiss.model.resources.TMasterResource;
@@ -46,12 +48,16 @@ public class SearchController extends HttpServlet {
 			SpotifyResource spoty = new SpotifyResource(accessTokenSpotify);
 			SpotifyTrackResource spotytracks = new SpotifyTrackResource(accessTokenSpotify);
 			GCalendarResource gcalendar = new GCalendarResource(accessTokenGC);
-			
+//			MExpertsResource mexperts=new MExpertsResource();
 			
 			TicketSearch tmasterResults = tmaster.getTickets(artista);
 			String id = spoty.getArtistsId(artista).getArtists().getItems().get(0).getId();
 			TracksSearch spotyResults = spotytracks.getArtistTrack(id);
 			GCalendarSearch gcSearch = gcalendar.getEvents(correo);
+//			MExpertsSearch mSearch=mexperts.getArtistas();
+//			
+//			if(mSearch!=null) req.setAttribute("artistas", mSearch);
+			
 			if(tmasterResults != null || spotyResults != null || gcSearch!=null) {
 				if(tmasterResults != null) {
 					req.setAttribute("tickets", tmasterResults.getEmbedded());

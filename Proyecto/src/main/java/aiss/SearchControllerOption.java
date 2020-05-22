@@ -12,7 +12,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import aiss.model.gcalendar.GCalendarSearch;
+import aiss.model.mexperts.MExpertsSearch;
 import aiss.model.resources.GCalendarResource;
+import aiss.model.resources.MExpertsResource;
 import aiss.model.resources.SpotifyResource;
 import aiss.model.resources.SpotifyTrackResource;
 import aiss.model.resources.TMasterResource;
@@ -90,6 +92,10 @@ public class SearchControllerOption extends HttpServlet {
 		}else {
 			req.setAttribute("gc", "false");
 		}
+		
+//		MExpertsResource mexperts=new MExpertsResource();
+//		MExpertsSearch mSearch=mexperts.getArtistas();
+//		if(mSearch!=null) req.setAttribute("artistas", mSearch);
 		
 		rd = req.getRequestDispatcher("/success.jsp");
 		rd.forward(req, resp);

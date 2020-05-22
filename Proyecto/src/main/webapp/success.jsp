@@ -14,10 +14,10 @@
 <body>
 	
 	
-	<!--  
+	
 	<p class="token">Spotify:<c:out value="${requestScope.tokenS}"/> </p>
 	<p class="token">GCalendar:<c:out value="${requestScope.tokenGC}"/> </p>
-	-->
+	
 
 	<div class="botonB">
 	<a href="index.html"><div class="buscar"> Buscador </div></a>
@@ -85,6 +85,22 @@
 		<% } %>
 		</div>
 		
+		
+		<!--  <div class="ticketmaster">
+			<h1> Artistas </h1>
+			<div class="info">
+			<c:forEach items="${requestScope.artistas}" var="ticket">
+				<div class="tmaster-info">
+					<span>Nombre: <c:out value="${ticket.name}"/></span><br/>
+					
+					<span>Categoria: <c:out value="${ticket.dates.start.branch}"/></span><br/>
+					
+					<span>Nacimiento: <c:out value="${ticket.dates.start.birth}"/></span><br/>
+			
+				</div>	
+			</c:forEach>
+			</div>
+		</div>-->
 	</div>
 	
 	<script>
