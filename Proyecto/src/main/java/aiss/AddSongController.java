@@ -25,19 +25,24 @@ public class AddSongController extends HttpServlet {
 		String accessTokenSpotify = (String) req.getSession().getAttribute("Spotify-token");
 		req.setAttribute("tokenS", accessTokenSpotify);
 		
-		String playlistID = req.getParameter("id_play");
-		String songURI = req.getParameter("uri_song");
-		SpotifyPlaylistResource plr = new SpotifyPlaylistResource(accessTokenSpotify);
-		boolean success = plr.addSong(playlistID, songURI);
-		super.doGet(req, resp);
-		
-		if (success) {
-			req.setAttribute("message", "Canción añadida correctamente");
-			log.log(Level.FINE, "La canción con URI=" + songURI + " añadida a la playlist con id=" + playlistID + ". Llevando a la lista de playlists.");
-		}
-		else {
-			req.setAttribute("message", "La canción no ha sido añadida");
-			log.log(Level.FINE, "La canción con URI=" + songURI + " no añadida a la playlist con id=" + playlistID + ". Quizás la canción ya existía en la playlist. Llevando a la lista de playlists.");
+		if((accessTokenSpotify != null && !"".equals(accessTokenSpotify))) {
+			req.setAttribute("spot", "true");
+			String playlistID = req.getParameter("id_play");
+			String songURI = req.getParameter("uri_song");
+			SpotifyPlaylistResource plr = new SpotifyPlaylistResource(accessTokenSpotify);
+			boolean success = plr.addSong(playlistID, songURI);
+			super.doGet(req, resp);
+			
+			if (success) {
+				req.setAttribute("message", "Canción añadida correctamente");
+				log.log(Level.FINE, "La canción con URI=" + songURI + " añadida a la playlist con id=" + playlistID + ". Llevando a la lista de playlists.");
+			}
+			else {
+				req.setAttribute("message", "La canción no ha sido añadida");
+				log.log(Level.FINE, "La canción con URI=" + songURI + " no añadida a la playlist con id=" + playlistID + ". Quizás la canción ya existía en la playlist. Llevando a la lista de playlists.");
+			}
+		} else {
+			req.setAttribute("spot", "false");
 		}
 		
 		// Forward to contact list view
