@@ -63,11 +63,10 @@
 				<c:forEach items="${requestScope.tracks}" var="track">
 					<div id="<%= i %>" class="spotify-track"> 
 						<span>Nombre: <c:out value="${track.name}"/></span>
-						<span>Uri: <c:out value="${track.uri}"></c:out></span>
 						<iframe src="https://open.spotify.com/embed/track/${track.id}"width="100%" height="80"></iframe>
 						<button type="button" class="boton" onclick="ocultar(<%=i%>)"> Delete </button>
 						<form action="/AddSongController">
-							<input id="id_play" name="id_play">
+							<input class="id_play" name="id_play" type="hidden">
 							<input name="uri_song" value="${track.uri}" type="hidden">
 							<button type="submit" class="boton" >Añadir a tu PlayList</button>
 						</form>
@@ -133,20 +132,22 @@
 			elemento.style.display = 'block';
 		}
 	}
+	
+	let seleccion=document.getElementById("seleccion");
+    var id_p;
+    seleccion.addEventListener("input", function(){
+        let value=seleccion.value;
+        id_p=value;
+        console.log(id_p);
+        var ids = document.getElementsByClassName("id_play");
+        for(var j = 0; j < ids.length; j++){
+            ids[j].value = id_p;
+            console.log(ids[j].value);
+        }
+    });
 	</script>
 	
 	
-	<script type="text/javascript">
-
-        let id=document.getElementById("id_play");
-        let seleccion=document.getElementById("seleccion");
 	
-        seleccion.addEventListener("input", function(){
-            let value=seleccion.value;
-            id.value=value;
-
-        });
-
-    </script>
 </body>
 </html>
