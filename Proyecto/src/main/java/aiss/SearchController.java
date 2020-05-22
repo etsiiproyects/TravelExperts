@@ -12,9 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import aiss.model.gcalendar.GCalendarSearch;
-import aiss.model.mexperts.MExpertsSearch;
 import aiss.model.resources.GCalendarResource;
-import aiss.model.resources.MExpertsResource;
 import aiss.model.resources.SpotifyResource;
 import aiss.model.resources.SpotifyTrackResource;
 import aiss.model.resources.TMasterResource;
