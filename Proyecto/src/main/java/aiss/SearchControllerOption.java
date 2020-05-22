@@ -15,9 +15,11 @@ import aiss.model.gcalendar.GCalendarSearch;
 import aiss.model.mexperts.MExpertsSearch;
 import aiss.model.resources.GCalendarResource;
 import aiss.model.resources.MExpertsResource;
+import aiss.model.resources.SpotifyPlaylistResource;
 import aiss.model.resources.SpotifyResource;
 import aiss.model.resources.SpotifyTrackResource;
 import aiss.model.resources.TMasterResource;
+import aiss.model.spotifyplaylist.PlaylistSearch;
 import aiss.model.spotifytracks.TracksSearch;
 import aiss.model.tmaster.TicketSearch;
 
@@ -77,6 +79,10 @@ public class SearchControllerOption extends HttpServlet {
 			SpotifyTrackResource spotytracks = new SpotifyTrackResource(accessTokenSpotify);
 			TracksSearch spotyResults = spotytracks.getArtistTrack(id);
 			req.setAttribute("tracks", spotyResults.getTracks());
+			
+			SpotifyPlaylistResource spoty1 = new SpotifyPlaylistResource(accessTokenSpotify);
+			PlaylistSearch playlists = spoty1.getPlaylists();
+			req.setAttribute("playlists", playlists.getItems());
 		}else {
 			req.setAttribute("spot", "false");
 		}

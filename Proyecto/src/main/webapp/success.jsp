@@ -50,6 +50,14 @@
 				Integer i = 0; %>
 				<form action="PlaylistController" method="post"><input type="submit" name="searchBtn" title="search" value="Ver mis playlist"></form>
 				<h1> Top canciones: </h1>
+				<form>
+					<select id="seleccion">
+					<option value="" hidden selected disabled>Selecciona tu PlayList</option>
+						<c:forEach items="${requestScope.playlists}" var="play">
+							<option value="${play.id}">${play.name}</option>
+						</c:forEach>
+					</select>
+				</form>
 				<button type="button" class="boton" onclick="mostrar()"> All songs </button>
 				<div class="info">
 				<c:forEach items="${requestScope.tracks}" var="track">
@@ -58,6 +66,11 @@
 						<span>Uri: <c:out value="${track.uri}"></c:out></span>
 						<iframe src="https://open.spotify.com/embed/track/${track.id}"width="100%" height="80"></iframe>
 						<button type="button" class="boton" onclick="ocultar(<%=i%>)"> Delete </button>
+						<form>
+							<input id="id_play" name="id_play">
+							<input name="uri_song" value="${track.uri}" type="hidden">
+							<button type="submit" class="boton" >Añadir a tu PlayList</button>
+						</form>
 					</div>
 					<% i++; %>
 				</c:forEach>
@@ -121,5 +134,19 @@
 		}
 	}
 	</script>
+	
+	
+	<script type="text/javascript">
+
+        let id=document.getElementById("id_play");
+        let seleccion=document.getElementById("seleccion");
+	
+        seleccion.addEventListener("input", function(){
+            let value=seleccion.value;
+            id.value=value;
+
+        });
+
+    </script>
 </body>
 </html>
