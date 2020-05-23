@@ -17,7 +17,7 @@
 					<div class="spotify-track"> 
 						<span>Nombre: <c:out value="${playlist.name}"/></span>
 						<span>Id: <c:out value="${playlist.id }"></c:out></span>
-						<span>Canciones: <c:out value="${playlist.tracks.total }"></c:out></span>
+						<span>Canciones: <c:out value="${playlist.tracks.total}"></c:out></span>
 					</div>
 				</c:forEach>
 				</div>
