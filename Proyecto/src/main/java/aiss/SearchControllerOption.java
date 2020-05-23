@@ -97,10 +97,6 @@ public class SearchControllerOption extends HttpServlet {
 			req.setAttribute("gc", "false");
 		}
 		
-//		MExpertsResource mexperts=new MExpertsResource();
-//		MExpertsSearch mSearch=mexperts.getArtistas();
-//		if(mSearch!=null) req.setAttribute("artistas", mSearch);
-		
 		rd = req.getRequestDispatcher("/success.jsp");
 		rd.forward(req, resp);
 		
