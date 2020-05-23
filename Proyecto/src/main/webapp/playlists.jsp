@@ -14,11 +14,13 @@
 		<div class="spotify">
 				<div class="info">
 				<c:forEach items="${requestScope.playlists}" var="playlist">
-					<div class="spotify-track"> 
-						<span>Nombre: <c:out value="${playlist.name}"/></span>
+					<div class="spotify-track">
+						<iframe src="https://open.spotify.com/embed/playlist/${playlist.id }" width="300" 
+						height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+						<!--<span>Nombre: <c:out value="${playlist.name}"/></span>
 						<span>Id: <c:out value="${playlist.id }"></c:out></span>
-						<span>Canciones: <c:out value="${playlist.tracks.total}"></c:out></span>
-					</div>
+						<span>Canciones: <c:out value="${playlist.tracks.total}"></c:out></span>-->
+					</div> 
 				</c:forEach>
 				</div>
 		  </div>
