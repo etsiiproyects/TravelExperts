@@ -68,7 +68,7 @@
 						<form action="/AddSongController">
 							<input class="id_play" name="id_play" type="hidden">
 							<input name="uri_song" value="${track.uri}" type="hidden">
-							<button type="submit" class="boton" >Añadir a tu PlayList</button>
+							<button type="formenctype" class="boton" >Añadir a tu PlayList</button>
 						</form>
 					</div>
 					<% i++; %>
