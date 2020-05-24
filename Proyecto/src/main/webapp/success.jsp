@@ -101,14 +101,15 @@
 				</div>
 			</div>
 		<% } else{ %>
-		<div class="iniciaS">
-			<a href="AuthController/Spotify"> Inicia sesion en Spotify </a>
+		<div class="inicioSes"> 
+			<a href="AuthController/Spotify"> <div class="iniciaS"> Inicia sesion en Spotify </div> </a>
 		</div>
 		<% } %>
 		  
-		<div class="gcalendar">
+		
 			
 		<% if (request.getAttribute("gc").toString()=="true") { %>
+		<div class="gcalendar">
 				<h1> Calendario: </h1>
 				<div class="cal">
 				<iframe src="https://calendar.google.com/calendar/embed?src=${requestScope.email}&ctz=Europe%2FMadrid" width="100%" height="100%" style="border: 0"  frameborder="0" scrolling="no"></iframe>
@@ -125,11 +126,13 @@
 					</div>
 				</c:forEach>
 			</div>
-			
-		<% } else{ %>
-			<a href="AuthController/GoogleCalendar"> Inicia sesion en Google Calendar </a>
-		<% } %>
 		</div>
+		<% } else{ %>
+		<div class="inicioSes"> 
+			<a href="AuthController/GoogleCalendar"> <div class="iniciaGC"> Inicia sesion en Google Calendar</div> </a>
+		</div>
+		<% } %>
+		
 	</div>
 	
 	<script>
