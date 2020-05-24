@@ -1,0 +1,394 @@
+body {
+	width: auto;
+	margin: 0;
+	margin-left: 20%;
+	color: black;
+	background-image:
+		url("https://los40.com/los40/imagenes/2018/07/04/musica/1530694278_684908_1530701108_gigante_normal.jpg");
+	background-size: cover;
+	background-attachment: fixed;
+	background-position: left center;
+	display: flex;
+	user-select: none;
+	height: 100%;
+}
+
+.contenido{
+	width:100%;
+	display: flex;
+	position: relative;
+	height: 100vh;
+}
+
+
+.contenido a{
+	text-decoration: none;
+}
+
+.info a {
+	text-decoration: none;
+    margin: 10px 10px 0px 10px;
+}
+.infoTM a{
+	text-decoration: none;
+    margin: 10px 10px 0px 10px;
+}
+
+.infoTM{
+	overflow-y: scroll;
+	height: 80%;
+}
+
+
+.infoTM::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	background-color: #F5F5F5;
+}
+.infoTM::-webkit-scrollbar
+{
+	width: 12px;
+	background-color: rgba(0,0,0,0.8);
+}
+
+.infoTM::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #555;
+}
+.ticketmaster {
+	position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 20%;
+    background-color: rgba(0,0,0,0.8);
+    min-width: 200px;
+
+}
+
+.tmaster-info {
+    margin: 0;
+    display: none;
+    height: auto;
+    background: #fff;
+    color: #001F3F;
+    padding: 30px 0;
+    text-align: center;
+    border: 1px solid;
+}
+
+.wrap {
+    display: block;
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+}
+.tmaster-info p {
+    font-size: 20px;
+    margin-bottom: 50px;
+}
+
+
+.btn-toggle {
+	padding: 10px 0;
+    height: auto;
+    line-height: 30px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #000;
+    display: block;
+    background:  #4BD0E5;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.btn-toggle:hover {
+    text-decoration: none;
+}
+
+.active {
+    display: flex;
+}
+
+.activetog {
+    display: flex;
+}
+
+
+
+.ticketmaster span {
+	margin: 0 25px;
+	font-size: 24px;
+	font-family: 'Fjalla One', sans-serif;
+}
+
+.ticketmaster h1 {
+	color: #0267d5;
+	opacity: 1;
+	font-size: 35px;
+	font-family: 'Fjalla One', sans-serif;
+	align-items: center;
+}
+
+.addGC{
+	width: 100%;
+	margin-top: 30px;
+	margin-bottom: 0;
+	border: 0;
+	color: white;
+	height: 20px;
+	background-color: #3664d0;
+	font-family: 'Fjalla One', sans-serif;
+	cursor: pointer;
+}
+.addGC:hover{
+	opacity: 0.8;
+}
+.buscar{
+	margin:30px auto;
+	border-radius:10px;
+	text-align:center;
+	width: 99%;
+	height: auto;
+	padding: 10px 0;
+	font-family: 'Monoton', cursive;
+	font-family: 'Hind Guntur', sans-serif;
+	font-size:30px;
+	color:#c35397;
+	background-color: rgba(0,0,0,0);
+}
+
+.botonB{
+	bottom: 0;
+	position: absolute;
+	z-index: 0;
+	display: block;
+	width: 100%;
+	align-items: center;
+	justify-content: center;
+ 
+	
+}
+.botonB a{
+	text-decoration: none;
+	width: 100%;
+	cursor:pointer;
+}
+
+.spotify h1{
+	color: #1ed760;
+	font-size: 35px;
+	font-family: 'Fjalla One', sans-serif;
+	align-items: center;
+}
+
+.spotify span{
+	color: #1ed760;
+	margin: 0 25px;
+	font-size: 24px;
+	font-family: 'Fjalla One', sans-serif;
+}
+
+.spotify{
+	height: auto;
+	border: 2px #1ed760;
+	border-radius: 10px;
+	padding: 10px;
+	position: relative;
+	margin: 20px;
+	width: 100vw;
+	background-color: black;
+	box-sizing: content-box;
+}
+	
+.spotify a{
+	background-color: white;
+	text-decoration: none;
+	font-size: 30px;
+}
+#seleccion{
+	width: 100%;
+	display: flex;
+	position: relative;
+	background-color: rgba(90, 90, 90, 0.8);
+	color: black;
+	height: 30px;
+	border: 0px;
+	margin-bottom: 20px;
+}
+
+#seleccion .opcion{
+	border-radius: 10px;
+	background-color:  rgba(90, 90, 90, 0.8);
+}
+
+.tmaster-info, .spotify-track{
+	margin: 10px;
+}
+
+.songlist {
+	margin: 20px;
+}
+
+.gcalendar{
+	border: 2px black;
+	border-radius: 10px;
+	padding: 10px;
+	margin: 20px;
+	background-color: rgba(0,0,0,0.8);
+	color: white;
+	width: 50vw;
+	height: 100vh;
+}
+
+.infoGC{
+	margin-top: 20px;
+	position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+    height: 40vh;
+    overflow-y: scroll;
+}
+
+.infoGC::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	background-color: #F5F5F5;
+}
+.infoGC::-webkit-scrollbar
+{
+	width: 12px;
+	background-color: rgba(0,0,0,0.8);
+}
+
+.infoGC::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #555;
+}
+
+.gcalendar-evento{
+	position: relative;
+    width: 40%;
+	background-color: #3664d0;
+	margin: 10px;
+	height: 100px;
+	align-items: center;
+	text-align: center;
+	justify-content: center;
+	border-radius: 7px;
+}
+
+.infoEvento{
+	width: 100%;
+}
+
+.cal {
+	width: 100%;
+	height: 50vh;
+}
+
+.artist{
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 20px 10px 40px 10px;
+}
+.botones{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+}
+.allSongs{
+	width: 100%;
+	display: block;
+	position: relative;
+	background-color: #1ed760;
+	color: black;
+	height: 30px;
+	border: 0;
+}
+
+.botones:first-child{
+	width: 100%;
+	display: block;
+}
+.boton{
+	display: flex;
+	position: relative;
+	background-color: #1ed760;
+	color: black;
+	height: 30px;
+	border: 0px;
+	border-radius: 10px;
+	margin: 10px;
+}
+
+.boton:hover{
+	color:#1ed760;
+	background-color: black;
+	cursor:pointer;
+}
+
+.token{
+background-color: white;
+width: 100%;
+}
+
+
+.iniciaS{
+	margin-top: 40vh;
+	height: 90px;
+	display: flex;
+	align-items:center;
+	justify-content: center;
+	width: 100%;
+	text-align: center;
+	background-color: #1ed760;
+	color: black;
+	font-size: 30px;
+	border-radius: 15px;
+}
+
+.iniciaS:hover{
+	background-color: black;
+	color: #1ed760;
+}
+.inicioSes{
+	display: block;
+	width: 100vw;
+	margin: 0 4vw 0 4vw;
+}
+.inicioSes a{
+	width: 50vw;
+}
+.iniciaGC{
+	margin-top: 40vh;
+	height: 90px;
+	display: flex;
+	align-items:center;
+	justify-content: center;
+	width: 100%;
+	text-align: center;
+	background-color: #1ed760;
+	color: white;
+	font-size: 30px;
+	border-radius: 15px;
+	background-color: #3664d0;
+}
+
+.iniciaGC:hover{
+	background-color: white;
+	color: #3664d0;
+}
+
+
