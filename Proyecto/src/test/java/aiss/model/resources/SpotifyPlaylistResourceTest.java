@@ -4,12 +4,16 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
 import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.junit.Test;
 
 import aiss.model.spotifyplaylist.Item;
 import aiss.model.spotifyplaylist.PlaylistSearch;
+import aiss.model.spotifysearch.SpotifySearch;
 import aiss.model.spotifytracks.Track;
+import aiss.model.spotifytracks.TracksSearch;
 
 
 public class SpotifyPlaylistResourceTest {
@@ -40,4 +44,5 @@ public class SpotifyPlaylistResourceTest {
 		assertEquals("No se ha añadido la cancion", true, c);
 		System.out.println("Evento añadido: " + c);
 	}
+	
 }

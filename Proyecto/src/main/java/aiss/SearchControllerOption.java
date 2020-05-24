@@ -71,7 +71,7 @@ public class SearchControllerOption extends HttpServlet {
 		}
 		
 		if((accessTokenSpotify != null && !"".equals(accessTokenSpotify))){
-			req.setAttribute("spot", "true");
+			
 			SpotifyResource spoty = new SpotifyResource(accessTokenSpotify);
 			String id = spoty.getArtistsId(artista).getArtists().getItems().get(0).getId();
 			String uri=spoty.getArtistsId(artista).getArtists().getItems().get(0).getUri();
@@ -82,6 +82,7 @@ public class SearchControllerOption extends HttpServlet {
 			
 			SpotifyPlaylistResource spoty1 = new SpotifyPlaylistResource(accessTokenSpotify);
 			PlaylistSearch playlists = spoty1.getPlaylists();
+			if(spoty!=null) req.setAttribute("spot", "true");
 			req.setAttribute("playlists", playlists.getItems());
 		}else {
 			req.setAttribute("spot", "false");
@@ -89,10 +90,11 @@ public class SearchControllerOption extends HttpServlet {
 		
 		
 		if((accessTokenGC != null && !"".equals(accessTokenGC))) {
-			req.setAttribute("gc", "true");
+			
 			GCalendarResource gcalendar = new GCalendarResource(accessTokenGC);
 			GCalendarSearch gcSearch = gcalendar.getEvents(correoE);
 			String email = URLEncoder.encode(correoE, "UTF-8");
+			if(gcalendar!=null) req.setAttribute("gc", "true");
 			req.setAttribute("email", email);
 			req.setAttribute("eventos", gcSearch.getItems());
 		}else {
