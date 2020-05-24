@@ -12,10 +12,11 @@
 </head>
 <body>
 			<c:forEach items="${requestScope.songssaved }" var="song">
-					<iframe src="https://open.spotify.com/embed/track/${song.id}"width="100%" height="80"></iframe>
+				<span>Nombre: <c:out value="${song.name}"/></span>
+				<iframe src="https://open.spotify.com/embed/track/${song.id}"width="100%" height="80"></iframe>
 			</c:forEach>
 			<c:forEach items="${requestScope.playlists}" var="playlist">
-					<iframe src="https://open.spotify.com/embed/playlist/${playlist.id }" width="300" 
-					height="380" frameborder="0" allowtransparency="true" allow="encrypted-media" class="songlist"></iframe>
+				<iframe src="https://open.spotify.com/embed/playlist/${playlist.id }" width="300" 
+				height="380" frameborder="0" allowtransparency="true" allow="encrypted-media" class="songlist"></iframe>
 			</c:forEach>
 </body>
