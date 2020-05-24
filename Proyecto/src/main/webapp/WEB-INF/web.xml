@@ -21,7 +21,7 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>AddEventController</servlet-name>
-    <url-pattern>/addEvent</url-pattern>
+    <url-pattern>/addEventController</url-pattern>
   </servlet-mapping>
   <servlet>
     <description></description>

@@ -51,6 +51,9 @@ public class GCalendarResource {
        
         try {
             cr = new ClientResource(uri);
+            ChallengeResponse chr = new ChallengeResponse(ChallengeScheme.HTTP_OAUTH_BEARER);
+			chr.setRawValue(access_token);
+	        cr.setChallengeResponse(chr);
             cr.setEntityBuffering(true);        // Needed for using RESTlet from JUnit tests
            
             cr.post(event,GCalendarResource.class);

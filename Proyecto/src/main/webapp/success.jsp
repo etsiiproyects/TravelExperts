@@ -28,7 +28,7 @@
 			<div class="info">
 			<c:forEach items="${requestScope.tickets.events}" var="ticket">
 				<div class="tmaster-info">
-				<form action="addEvent" method="post" accept-charset="utf-8">
+				<form action="/addEventController" method="post" accept-charset="utf-8">
 					<span>Evento: <c:out value="${ticket.name}"/></span><br/>
 					<input id="nombre" name="nombre" type="hidden" value="${ticket.name}"> 
 					<span>Fecha: <c:out value="${ticket.dates.start.localDate}"/></span><br/>
@@ -138,6 +138,7 @@
         }
     });
 	</script>
+	
 	
 	
 	

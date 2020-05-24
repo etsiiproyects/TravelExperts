@@ -38,21 +38,18 @@ public class AddEventController extends HttpServlet{
 		  
 		GCalendarResource gc = new GCalendarResource(accessTokenGC);
 		
-//		String name = req.getParameter("nombre").toString();
-//		String date = req.getParameter("fecha").toString();
+		String name = req.getParameter("nombre").toString();
+		String date = req.getParameter("fecha").toString();
 //		String time = req.getParameter("hora").toString();
-//		String address = req.getParameter("direccion").toString();
-//		
-		String name = "Evento1";
-		String address = "Sevilla";
+		String address = req.getParameter("direccion").toString();
 		
 //		String fin = time.replace(time.charAt(1), String.valueOf(Integer.valueOf(time.charAt(1)+2)).charAt(0));
 		
 		Start start = new Start();
-		start.setDate("2020-05-01");
+		start.setDate(date);
 //		start.setDateTime(time);
 		End end = new End();
-		end.setDate("2020-05-01");
+		end.setDate(date);
 //		Creator cr = new Creator();
 //		cr.setEmail(email);
 //		Organizer org = new Organizer();
