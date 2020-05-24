@@ -65,24 +65,6 @@ public class GCalendarResource {
     }
 
 	
-	public boolean updateEvent(GCalendarResource gc, String id) throws UnsupportedEncodingException  {
-		String mail = URLEncoder.encode(id,"UTF-8");
-		String uri = "https://www.googleapis.com/calendar/v3/users/me/calendarList/"+mail+"?key="+ TCALENDAR_API_KEY;
-		ClientResource cr = null;
-		boolean success = true;
-		try {
-			cr = new ClientResource(uri);
-			cr.setEntityBuffering(true);		// Needed for using RESTlet from JUnit tests
-			cr.put(gc);
-			
-			
-		} catch (ResourceException re) {
-			System.err.println("Error when updating the event: " + cr.getResponse().getStatus());
-			success = false;
-		}
-		
-		return success;
-	}
 	
 	public boolean deleteEvent(String eventId, String id) throws UnsupportedEncodingException{
 		String mail = URLEncoder.encode(id,"UTF-8");
@@ -91,6 +73,9 @@ public class GCalendarResource {
 		boolean success = true;
 		try {
 			cr = new ClientResource(uri + "/" + eventId);
+			ChallengeResponse chr = new ChallengeResponse(ChallengeScheme.HTTP_OAUTH_BEARER);
+			chr.setRawValue(access_token);
+	        cr.setChallengeResponse(chr);
 			cr.setEntityBuffering(true);		// Needed for using RESTlet from JUnit tests
 			cr.delete();
 			
