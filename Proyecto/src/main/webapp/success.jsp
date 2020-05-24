@@ -75,6 +75,10 @@
 							<input type="hidden" name="songId" value="${track.id}">
 							<button class="boton">Seguir la Cancion</button>
 						</form>
+						<form action="/UnFollowSongController">
+							<input type="hidden" name="songId" value="${track.id}">
+							<button class="boton">Dejar de seguir la Cancion</button>
+						</form>
 					</div>
 					<% i++; %>
 				</c:forEach>

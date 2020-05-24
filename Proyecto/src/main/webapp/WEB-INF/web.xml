@@ -3,8 +3,6 @@
   <welcome-file-list>
     <welcome-file>intro.html</welcome-file>
   </welcome-file-list>
-  
-  
   <servlet>
     <description></description>
     <display-name>SearchControllerOption</display-name>
@@ -15,8 +13,6 @@
     <servlet-name>SearchControllerOption</servlet-name>
     <url-pattern>/SearchControllerOption</url-pattern>
   </servlet-mapping>
-  
-  
   <servlet>
     <description></description>
     <display-name>AddEventController</display-name>
@@ -27,8 +23,6 @@
     <servlet-name>AddEventController</servlet-name>
     <url-pattern>/addEvent</url-pattern>
   </servlet-mapping>
-  
-  
   <servlet>
     <description></description>
     <display-name>PlaylistController</display-name>
@@ -39,8 +33,6 @@
     <servlet-name>PlaylistController</servlet-name>
     <url-pattern>/PlaylistController</url-pattern>
   </servlet-mapping>
-  
-  
   <servlet>
     <description></description>
     <display-name>AddSongController</display-name>
@@ -51,8 +43,6 @@
     <servlet-name>AddSongController</servlet-name>
     <url-pattern>/AddSongController</url-pattern>
   </servlet-mapping>
-  
-  
   <servlet>
     <description></description>
     <servlet-name>SpotifyAuthController</servlet-name>
@@ -113,8 +103,6 @@
     <servlet-name>GoogleCalendarOAuth2Callback</servlet-name>
     <url-pattern>/oauth2callback/GoogleCalendar</url-pattern>
   </servlet-mapping>
-  
-  
   <servlet>
     <description></description>
     <display-name>followSongController</display-name>
@@ -124,5 +112,16 @@
   <servlet-mapping>
     <servlet-name>followSongController</servlet-name>
     <url-pattern>/followSongController</url-pattern>
+  </servlet-mapping>
+ 
+  <servlet>
+    <description></description>
+    <display-name>UnFollowSongController</display-name>
+    <servlet-name>UnFollowSongController</servlet-name>
+    <servlet-class>aiss.UnFollowSongController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UnFollowSongController</servlet-name>
+    <url-pattern>/UnFollowSongController</url-pattern>
   </servlet-mapping>
 </web-app>

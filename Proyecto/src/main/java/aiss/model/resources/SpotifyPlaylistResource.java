@@ -72,5 +72,27 @@ public class SpotifyPlaylistResource {
 		}
 		return success;
 	}
+	
+	public boolean unFollowSong(String songId) {
+		ClientResource cr=null;
+		boolean success=true;
+		String uri= "https://api.spotify.com/v1/me/tracks?ids=" + songId;
+		try {
+			cr = new ClientResource(uri);
+			ChallengeResponse chr = new ChallengeResponse(ChallengeScheme.HTTP_OAUTH_BEARER);
+			chr.setRawValue(access_token);
+	        cr.setChallengeResponse(chr);
+			
+			cr.setEntityBuffering(true);		// Needed for using RESTlet from JUnit tests
+			cr.delete();
+		}catch (ResourceException re){
+			System.err.println("Error añadiendo la cancion: " + cr.getResponse().getStatus());
+			success=false;
+			throw re;
+		}
+		return success;
+	}
+	
+	
 
 }
