@@ -48,7 +48,7 @@
 		<% if (request.getAttribute("spot").toString()=="true") { 
 		
 				Integer i = 0; %>
-				<form action="PlaylistController" method="post"><input type="submit" name="searchBtn" title="search" value="Ver mis playlist"></form>
+				<form action="PlaylistController" method="post"><input type="submit" name="searchBtn" title="search" value="Ver mis playlist y mis canciones seguidas"></form>
 				<h1> Top canciones: </h1>
 				<iframe src="https://open.spotify.com/follow/1/?uri=${requestScope.artistUri}&size=detail&theme=dark" width="300" height="56" scrolling="no" frameborder="0" style="border:none; overflow:hidden;" allowtransparency="true"></iframe>
 				<form>

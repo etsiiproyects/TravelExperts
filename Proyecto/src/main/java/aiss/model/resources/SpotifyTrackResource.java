@@ -18,6 +18,7 @@ public class SpotifyTrackResource {
 	public SpotifyTrackResource(String access_token) {
 		this.access_token=access_token;
 	}
+	
 	public TracksSearch getArtistTrack(String id) throws UnsupportedEncodingException {
 		
 		String uri= "https://api.spotify.com/v1/artists/" + id + "/top-tracks?country=ES";
@@ -29,6 +30,17 @@ public class SpotifyTrackResource {
         cr.setChallengeResponse(chr);
 		TracksSearch tracksearch=cr.get(TracksSearch.class);
 		
+		return tracksearch;
+	}
+	
+	public TracksSearch getSongsSaved() throws UnsupportedEncodingException {
+		String uri = "https://api.spotify.com/v1/me/tracks";
+		log.log(Level.FINE, "Spotify URI: " + uri);
+		ClientResource cr = new ClientResource(uri);
+		ChallengeResponse chr = new ChallengeResponse(ChallengeScheme.HTTP_OAUTH_BEARER);
+		chr.setRawValue(access_token);
+        cr.setChallengeResponse(chr);
+		TracksSearch tracksearch=cr.get(TracksSearch.class);
 		return tracksearch;
 	}
 	

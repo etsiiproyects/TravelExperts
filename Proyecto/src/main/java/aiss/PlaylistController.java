@@ -10,7 +10,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import aiss.model.resources.SpotifyPlaylistResource;
+import aiss.model.resources.SpotifyTrackResource;
 import aiss.model.spotifyplaylist.PlaylistSearch;
+import aiss.model.spotifytracks.TracksSearch;
 
 public class PlaylistController extends HttpServlet {
 
@@ -29,9 +31,12 @@ public class PlaylistController extends HttpServlet {
 		
 		if((accessTokenSpotify != null && !"".equals(accessTokenSpotify))) {
 			req.setAttribute("spot", "true");
-			SpotifyPlaylistResource spoty = new SpotifyPlaylistResource(accessTokenSpotify);
-			PlaylistSearch playlists = spoty.getPlaylists();
+			SpotifyPlaylistResource spotyplaylists = new SpotifyPlaylistResource(accessTokenSpotify);
+			SpotifyTrackResource spotytracks = new SpotifyTrackResource(accessTokenSpotify);
+			PlaylistSearch playlists = spotyplaylists.getPlaylists();
+			TracksSearch tracks = spotytracks.getSongsSaved();
 			req.setAttribute("playlists", playlists.getItems());
+			req.setAttribute("songssaved", tracks.getTracks());
 		} else {
 			req.setAttribute("spot", "false");
 		}
