@@ -2,6 +2,7 @@ package aiss.model.resources;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
 import java.io.UnsupportedEncodingException;
 
@@ -9,35 +10,47 @@ import org.junit.Test;
 
 import aiss.model.spotifyplaylist.Item;
 import aiss.model.spotifyplaylist.PlaylistSearch;
-import aiss.model.spotifytracks.Track;
 
 
 public class SpotifyPlaylistResourceTest {
 
-	private final static String access_token = "BQD63S6KZl05O93czgYvtv631aZqJb5bHtv75BuNQMQcFb9Mst26hjtzjsHacbsQw6_ViSaf7mT9IPzCJRLxqHw-Z91dkqUAalGv6Ly5Q9gdRlHIhzzi-eZFELC8iFQUf4w1YYfK0f_Gjs1lgBWI1F59j3IIaGe-TG6VUABahOyjJQYdNlI78x0SsbVLL9FMtlyqn3StoBWbiMeJMLCFfMTcDAOzgNhL";
+	private final static String access_token = "BQBWO1kVK3P3yUjXfq8Anik-kea4RcqW2cKghAPNEw698hKErhoHaVOQjQe7g5ceAXWTlyaPweg4Wbr-QJa2VO7dcVLdqG0NHEKUnEx5kcZhgMRx8Mb4_sA_eEeKiA8_LuoHa0FTpUvmt6KZHKkpd9Akb6A9TL2WrTpma-Y9Femzesqy9VGwc0lPSOEtCCme4T9JHP8_nrH7ZJdoWNXAEO_wHe9DF-U5";
 	
 	static SpotifyPlaylistResource sp = new SpotifyPlaylistResource(access_token);
 	
 	@Test
-	public void testGetId() throws UnsupportedEncodingException {
+	public void testGetPlaylists() {
 		PlaylistSearch ps = sp.getPlaylists();
-		String id = ps.getItems().get(0).getId();
-		assertNotNull("No existe un ID para la playlist", id);
-		System.out.println("ID de la playlist: " + id);
+		Integer total = ps.getTotal();
+		assertNotNull("No existen canciones en la playlist", total==0);
+		System.out.println("Canciones totales de la playlist: " + total);
 	}
 	
 	@Test
 	public void testAddTrack() throws UnsupportedEncodingException {
 		Item cancion = new Item();
-		
 		String id = "3Bh3zPB5OeoIvg9qWqJB0h";
 		String uri = "spotify:track:2S93hylQBYLndMnaJuso8S";
-		
 		cancion.setId(id);
 		cancion.setUri(uri);
-		
 		boolean c = sp.addSong(id, uri);
 		assertEquals("No se ha añadido la cancion", true, c);
 		System.out.println("Evento añadido: " + c);
+	}
+	
+	@Test
+	public void testFollowSong() {
+		String songId = "3DYm7Lp7Fc3xf6WSCq5ntE";
+		boolean b = sp.followSong(songId);
+		assertTrue("No se ha comenzado a seguir la canción", b);
+		System.out.println("Canción seguida: " + b);
+	}
+	
+	@Test
+	public void testUnFollowSong() {
+		String songId = "3DYm7Lp7Fc3xf6WSCq5ntE";
+		boolean b = sp.unFollowSong(songId);
+		assertTrue("No se ha dejado de seguir la canción", b);
+		System.out.println("Canción dejada de seguir: " + b);
 	}
 }
