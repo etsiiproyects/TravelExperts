@@ -27,6 +27,7 @@
 			<c:forEach items="${requestScope.tickets.events}" var="ticket">
 				<a href="#" class="btn-toggle"><b> <c:out value="${ticket.embedded.venues[0].city.name}" /></b></a>
 				<div class="tmaster-info">
+
 					<div class="wrap">
 						<form action="addEvent" method="post" accept-charset="utf-8">
 							<span>Evento: <strong><c:out value="${ticket.name}"/></strong></span><br/>
@@ -41,6 +42,20 @@
 							<button type="submit" class="addGC">Add to calendar</button>
 						</form>
 					</div>
+
+				<form action="/addEventController" method="post" accept-charset="utf-8">
+					<span>Evento: <c:out value="${ticket.name}"/></span><br/>
+					<input id="nombre" name="nombre" type="hidden" value="${ticket.name}"> 
+					<span>Fecha: <c:out value="${ticket.dates.start.localDate}"/></span><br/>
+					<input id="fecha" name="fecha" type="hidden" value="${ticket.dates.start.localDate}"> 
+					<span>Hora: <c:out value="${ticket.dates.start.localTime}"/></span><br/>
+					<input id="hora" name="hora" type="hidden" value="${ticket.dates.start.localTime}"> 
+					<span>Direccion: <c:out value="${ticket.embedded.venues[0].address.line1}"/></span><br/>
+					<input id="direccion" name="direccion" type="hidden" value="${ticket.embedded.venues[0].address.line1}"> 
+					<img class="img-tm" src="${ticket.images[0].url}">
+					<button type="submit" class="addGC">Add to calendar</button>
+				</form>
+
 				</div>	
 			</c:forEach>
 			
@@ -155,7 +170,7 @@
 	function ocultar(i){
 		var id = i;
 		document.getElementById(id).style.display = 'none';
-	}
+	};
 	
 	function mostrar(){
 		var elementos = document.getElementsByClassName("spotify-track");
@@ -166,7 +181,7 @@
 			console.log(elemento);
 			elemento.style.display = 'block';
 		}
-	}
+	};
 	
 	let seleccion=document.getElementById("seleccion");
     var id_p;
@@ -184,6 +199,7 @@
     
     
 	</script>
+	
 	
 	
 	

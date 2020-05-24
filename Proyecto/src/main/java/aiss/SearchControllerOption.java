@@ -18,6 +18,7 @@ import aiss.model.resources.SpotifyResource;
 import aiss.model.resources.SpotifyTrackResource;
 import aiss.model.resources.TMasterResource;
 import aiss.model.spotifyplaylist.PlaylistSearch;
+import aiss.model.spotifysearch.SpotifySearch;
 import aiss.model.spotifytracks.TracksSearch;
 import aiss.model.tmaster.TicketSearch;
 
@@ -73,8 +74,9 @@ public class SearchControllerOption extends HttpServlet {
 		if((accessTokenSpotify != null && !"".equals(accessTokenSpotify))){
 			
 			SpotifyResource spoty = new SpotifyResource(accessTokenSpotify);
-			String id = spoty.getArtistsId(artista).getArtists().getItems().get(0).getId();
-			String uri=spoty.getArtistsId(artista).getArtists().getItems().get(0).getUri();
+			SpotifySearch ss=spoty.getArtistsId(artista);
+			String id = ss.getArtists().getItems().get(0).getId();
+			String uri=ss.getArtists().getItems().get(0).getUri();
 			req.setAttribute("artistUri", uri);
 			SpotifyTrackResource spotytracks = new SpotifyTrackResource(accessTokenSpotify);
 			TracksSearch spotyResults = spotytracks.getArtistTrack(id);
