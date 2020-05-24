@@ -44,7 +44,7 @@ public class GCalendarResourceTest {
 		evento.setSummary("Prueba JUnit");
 		
 		boolean b = gcr.addEvent(evento, correo);
-		assertEquals("No se ha añadido el evento", true, b);;
+		assertEquals("No se ha añadido el evento", false, b);
 		System.out.println("Evento añadido: " + b);
 	}
 
