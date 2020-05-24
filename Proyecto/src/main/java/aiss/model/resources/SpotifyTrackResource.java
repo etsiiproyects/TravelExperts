@@ -19,7 +19,7 @@ public class SpotifyTrackResource {
 		this.access_token=access_token;
 	}
 	
-	public TracksSearch getArtistTrack(String id) throws UnsupportedEncodingException {
+	public TracksSearch getArtistTrack(String id) {
 		
 		String uri= "https://api.spotify.com/v1/artists/" + id + "/top-tracks?country=ES";
 		
