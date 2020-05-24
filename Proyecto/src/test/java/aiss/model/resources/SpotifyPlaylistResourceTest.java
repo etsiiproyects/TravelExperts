@@ -14,7 +14,7 @@ import aiss.model.spotifytracks.Track;
 
 public class SpotifyPlaylistResourceTest {
 
-	private final static String access_token = "BQB0alAJ3G-JWGkmXycTwm7K_RMyE0IibFGMSKaxMowxl9yMwpr-hhd4xyBC7LpSpwRsO6rQoTz_Yzbvs9AjfO97DY4gCxpDr_qBgRRbe93iH6seipUVDN1ZiLOZyVWFBaEv8Qemu53sBCtOUC3v1n98VaiDNwvRt6lyKa6bVn9AcZbJOb2yCXuReOdqFpd2ka1WkCP48FSnm2ipfA";
+	private final static String access_token = "BQDJN8HXUsGXgALztYhrKDji7qdTDJqaRgUJ3ZqwYIRb0onf4y1-lSzwL8hp-VdTkz5ga1Sn2affiWodnztYKR5hUVS6AB_1EzfhPGCnv19st6GD0Dymp97pD4pu7TZNFgLTkP92kvg_-741aJOhNoRvUYj0xvnQlB2A1Q6XRoDVDq66_a01wjwPWtMCb6pqQULI8unmURPX4bVI2Va3fe3N";
 	
 	static SpotifyPlaylistResource sp = new SpotifyPlaylistResource(access_token);
 	
@@ -30,7 +30,7 @@ public class SpotifyPlaylistResourceTest {
 	public void testAddTrack() throws UnsupportedEncodingException {
 		Item cancion = new Item();
 		
-		String id = "57wYoTRh3kC5y2cOQxuTMB";
+		String id = "3Bh3zPB5OeoIvg9qWqJB0h";
 		String uri = "spotify:track:2S93hylQBYLndMnaJuso8S";
 		
 		cancion.setId(id);

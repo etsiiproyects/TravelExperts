@@ -74,6 +74,8 @@ public class SearchControllerOption extends HttpServlet {
 			req.setAttribute("spot", "true");
 			SpotifyResource spoty = new SpotifyResource(accessTokenSpotify);
 			String id = spoty.getArtistsId(artista).getArtists().getItems().get(0).getId();
+			String uri=spoty.getArtistsId(artista).getArtists().getItems().get(0).getUri();
+			req.setAttribute("artistUri", uri);
 			SpotifyTrackResource spotytracks = new SpotifyTrackResource(accessTokenSpotify);
 			TracksSearch spotyResults = spotytracks.getArtistTrack(id);
 			req.setAttribute("tracks", spotyResults.getTracks());

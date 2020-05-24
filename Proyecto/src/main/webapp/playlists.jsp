@@ -11,6 +11,8 @@
 	<link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
 </head>
 <body>
+			<iframe src="https://open.spotify.com/collection/tracks" width="300" 
+					height="380" frameborder="0" allowtransparency="true" allow="encrypted-media" class="songlist"></iframe>
 			<c:forEach items="${requestScope.playlists}" var="playlist">
 					<iframe src="https://open.spotify.com/embed/playlist/${playlist.id }" width="300" 
 					height="380" frameborder="0" allowtransparency="true" allow="encrypted-media" class="songlist"></iframe>
