@@ -33,7 +33,7 @@ public class SpotifyTrackResource {
 		return tracksearch;
 	}
 	
-	public TracksSearch getSongsSaved() throws UnsupportedEncodingException {
+	public TracksSearch getSongsSaved() {
 		String uri = "https://api.spotify.com/v1/me/tracks";
 		log.log(Level.FINE, "Spotify URI: " + uri);
 		ClientResource cr = new ClientResource(uri);
