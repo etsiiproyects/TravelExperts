@@ -19,14 +19,6 @@ public class SpotifyPlaylistResourceTest {
 	static SpotifyPlaylistResource sp = new SpotifyPlaylistResource(access_token);
 	
 	@Test
-	public void testGetId() throws UnsupportedEncodingException {
-		PlaylistSearch ps = sp.getPlaylists();
-		String id = ps.getItems().get(0).getId();
-		assertNotNull("No existe un ID para la playlist", id);
-		System.out.println("ID de la playlist: " + id);
-	}
-	
-	@Test
 	public void testGetPlaylists() {
 		PlaylistSearch ps = sp.getPlaylists();
 		Integer total = ps.getTotal();
