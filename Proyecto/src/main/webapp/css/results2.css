@@ -9,7 +9,6 @@ body {
 	background-attachment: fixed;
 	background-position: left center;
 	display: flex;
-	user-select: none;
 	height: 100%;
 }
 
@@ -202,6 +201,7 @@ body {
 	width: 100vw;
 	background-color: black;
 	box-sizing: content-box;
+	height: max-content;
 }
 	
 .spotify a{

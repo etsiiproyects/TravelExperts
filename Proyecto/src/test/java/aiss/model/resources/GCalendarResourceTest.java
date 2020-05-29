@@ -17,7 +17,7 @@ import aiss.model.gcalendar.Start;
 
 public class GCalendarResourceTest {
 	
-	private static final String access_token = "ya29.a0AfH6SMDObRAbnBHrjs1YRNXyzVaOfjcpwKJ0-AtlI5vMXtJw5_NvjNqMrxlB0tw3Xkt9sjseYu-2McyQCtNuDJk9oXOOLOKHyN4smOJSxANbG1uz5UEWUOHyOAsLG_uobXzkVEfoOQIOrQg4LJRCXMLSRUE73oWtLhw";
+	private static final String access_token = "ya29.a0AfH6SMAlqe7lZ9w3J1wAwFOMZvJvVmE_lcj3eMI6_eacntBKhyMEBQrbLuX-XwOvlJl6iAeh-f4q97hjzpOs-9V_w9_7rzAE5Xpv7MD4p9xMbG_VC5FauUAYowo9sWwIN_JL0tti5NsHyqVf8QQZcjLsC-aWBC4K38o";
 	
 	static GCalendarResource gcr = new GCalendarResource(access_token);
 	private String correo = "etsiiproyects@gmail.com";

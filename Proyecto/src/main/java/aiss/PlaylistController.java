@@ -34,9 +34,7 @@ public class PlaylistController extends HttpServlet {
 			SpotifyPlaylistResource spotyplaylists = new SpotifyPlaylistResource(accessTokenSpotify);
 			SpotifyTrackResource spotytracks = new SpotifyTrackResource(accessTokenSpotify);
 			PlaylistSearch playlists = spotyplaylists.getPlaylists();
-			TracksSearch tracks = spotytracks.getSongsSaved();
 			req.setAttribute("playlists", playlists.getItems());
-			req.setAttribute("songssaved", tracks.getTracks());
 		} else {
 			req.setAttribute("spot", "false");
 		}

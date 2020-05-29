@@ -105,46 +105,7 @@ public class SearchControllerOption extends HttpServlet {
 		
 		rd = req.getRequestDispatcher("/success.jsp");
 		rd.forward(req, resp);
-		
-//		if ((accessTokenSpotify != null && !"".equals(accessTokenSpotify)) && (accessTokenGC != null && !"".equals(accessTokenGC))) {
-//
-//			log.log(Level.FINE, "Buscando calendario de " + correo);
-//			
-//			
-//			GCalendarResource gcalendar = new GCalendarResource(accessTokenGC);
-//				
-//			
-//			
-//			GCalendarSearch gcSearch = gcalendar.getEvents(correo);
-//			
-//			if(spotyResults != null || gcSearch!=null) {
-//				if(spotyResults != null) {
-//					req.setAttribute("tracks", spotyResults.getTracks());
-//				}
-//				if(gcSearch != null) {
-//					String email = URLEncoder.encode(correo, "UTF-8");
-//					req.setAttribute("email", email);
-//					req.setAttribute("eventos", gcSearch.getItems());
-//				}
-//				rd = req.getRequestDispatcher("/success.jsp");
-//			}else {
-//					log.log(Level.SEVERE, "Objeto TMaster: " + tmasterResults);
-//					log.log(Level.SEVERE, "Objeto Spotify: " + id);
-//					log.log(Level.SEVERE, "Objeto GCalendar: " + gcSearch);
-//					rd = req.getRequestDispatcher("/error.jsp");
-//				}
-//				rd.forward(req, resp);
-//
-//		} else {
-//			if(accessTokenSpotify == null || "".equals(accessTokenSpotify)){
-//				log.info("Intenta acceder a Spotify sin token");
-//				req.getRequestDispatcher("AuthController/Spotify").forward(req, resp);
-//			}
-//			if(accessTokenGC == null || "".equals(accessTokenGC)){
-//				log.info("Intenta acceder a GCalendar sin token");
-//				req.getRequestDispatcher("AuthController/GoogleCalendar").forward(req, resp);
-//			}
-//		}
+
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)

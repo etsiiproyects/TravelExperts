@@ -21,7 +21,7 @@ import aiss.model.spotifytracks.TracksSearch;
 
 public class SpotifyResourceTest {
 	
-	private final static String access_token = "BQD63S6KZl05O93czgYvtv631aZqJb5bHtv75BuNQMQcFb9Mst26hjtzjsHacbsQw6_ViSaf7mT9IPzCJRLxqHw-Z91dkqUAalGv6Ly5Q9gdRlHIhzzi-eZFELC8iFQUf4w1YYfK0f_Gjs1lgBWI1F59j3IIaGe-TG6VUABahOyjJQYdNlI78x0SsbVLL9FMtlyqn3StoBWbiMeJMLCFfMTcDAOzgNhL";
+	private final static String access_token = "BQDuWePyfSJ0OgkC_dN36JVhAYTkjMKeM3MGWwJ-C3YxgzIkaMkjjie_XLD2Z9lgoas9rd46wIvFu83w3LMId7Ga5PQdIKn4L3Dru_ZiyTrBuWD2ExTMeEkb0v489fuL3XN4P5ucxFtspL-d5w5hV3zFCvZhsryoFJIt0bN_WTHYxeJPh9SfGowiBd9CWhYXnz6PAWHEFaGvoXwCsF83bEJym6ZPcFwE";
 	
 	static SpotifyResource sr = new SpotifyResource(access_token);
 	static SpotifyTrackResource str = new SpotifyTrackResource(access_token);	

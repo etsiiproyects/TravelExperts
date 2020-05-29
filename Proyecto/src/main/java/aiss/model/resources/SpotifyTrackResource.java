@@ -33,15 +33,4 @@ public class SpotifyTrackResource {
 		return tracksearch;
 	}
 	
-	public TracksSearch getSongsSaved() {
-		String uri = "https://api.spotify.com/v1/me/tracks";
-		log.log(Level.FINE, "Spotify URI: " + uri);
-		ClientResource cr = new ClientResource(uri);
-		ChallengeResponse chr = new ChallengeResponse(ChallengeScheme.HTTP_OAUTH_BEARER);
-		chr.setRawValue(access_token);
-        cr.setChallengeResponse(chr);
-		TracksSearch tracksearch=cr.get(TracksSearch.class);
-		return tracksearch;
-	}
-	
 }

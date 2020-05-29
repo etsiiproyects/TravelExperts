@@ -40,40 +40,25 @@ public class AddEventController extends HttpServlet{
 		
 		String name = req.getParameter("nombre").toString();
 		String date = req.getParameter("fecha").toString();
-//		String time = req.getParameter("hora").toString();
 		String address = req.getParameter("direccion").toString();
 		
-//		String fin = time.replace(time.charAt(1), String.valueOf(Integer.valueOf(time.charAt(1)+2)).charAt(0));
 		
 		Start start = new Start();
 		start.setDate(date);
-//		start.setDateTime(time);
 		End end = new End();
 		end.setDate(date);
-//		Creator cr = new Creator();
-//		cr.setEmail(email);
-//		Organizer org = new Organizer();
-//		org.setEmail(email);
+		
 		Item event = new Item();
 		
 		event.setSummary(name);
 		event.setStart(start);
 		event.setEnd(end);
 		event.setLocation(address);
-//		event.setOrganizer(org);
-//		event.setCreator(cr);
-		
-		
-//		GCalendarSearch gcSearch = gc.getEvents(email);
-//		List<Item> ls = gcSearch.getItems();
-//		ls.add(event);
-//		gcSearch.setItems(ls);
+
 		gc.addEvent(event, email);
-		
 		
 		rd = req.getRequestDispatcher("/SearchControllerOption");
 		rd.forward(req, resp);
-
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)

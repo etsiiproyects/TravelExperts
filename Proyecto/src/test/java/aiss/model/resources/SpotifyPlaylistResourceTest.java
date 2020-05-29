@@ -12,17 +12,12 @@ import org.junit.Test;
 
 import aiss.model.spotifyplaylist.Item;
 import aiss.model.spotifyplaylist.PlaylistSearch;
-<<<<<<< HEAD
-import aiss.model.spotifysearch.SpotifySearch;
-import aiss.model.spotifytracks.Track;
-import aiss.model.spotifytracks.TracksSearch;
-=======
->>>>>>> branch 'master' of https://github.com/etsiiproyects/TravelExperts.git
+
 
 
 public class SpotifyPlaylistResourceTest {
 
-	private final static String access_token = "BQBWO1kVK3P3yUjXfq8Anik-kea4RcqW2cKghAPNEw698hKErhoHaVOQjQe7g5ceAXWTlyaPweg4Wbr-QJa2VO7dcVLdqG0NHEKUnEx5kcZhgMRx8Mb4_sA_eEeKiA8_LuoHa0FTpUvmt6KZHKkpd9Akb6A9TL2WrTpma-Y9Femzesqy9VGwc0lPSOEtCCme4T9JHP8_nrH7ZJdoWNXAEO_wHe9DF-U5";
+	private final static String access_token = "BQDuWePyfSJ0OgkC_dN36JVhAYTkjMKeM3MGWwJ-C3YxgzIkaMkjjie_XLD2Z9lgoas9rd46wIvFu83w3LMId7Ga5PQdIKn4L3Dru_ZiyTrBuWD2ExTMeEkb0v489fuL3XN4P5ucxFtspL-d5w5hV3zFCvZhsryoFJIt0bN_WTHYxeJPh9SfGowiBd9CWhYXnz6PAWHEFaGvoXwCsF83bEJym6ZPcFwE";
 	
 	static SpotifyPlaylistResource sp = new SpotifyPlaylistResource(access_token);
 	
@@ -46,8 +41,6 @@ public class SpotifyPlaylistResourceTest {
 		System.out.println("Evento añadido: " + c);
 	}
 	
-<<<<<<< HEAD
-=======
 	@Test
 	public void testFollowSong() {
 		String songId = "3DYm7Lp7Fc3xf6WSCq5ntE";
@@ -63,5 +56,5 @@ public class SpotifyPlaylistResourceTest {
 		assertTrue("No se ha dejado de seguir la canción", b);
 		System.out.println("Canción dejada de seguir: " + b);
 	}
->>>>>>> branch 'master' of https://github.com/etsiiproyects/TravelExperts.git
+
 }

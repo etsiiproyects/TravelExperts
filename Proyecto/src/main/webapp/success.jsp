@@ -9,15 +9,16 @@
 	<link rel="stylesheet" type="text/css" href="../css/results2.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
+	<link rel="shortcut icon" href="../images/favicon.ico">
 </head>
 
 <body>
 	
 	
-	<!--
-	<p class="token">Spotify:<c:out value="${requestScope.tokenS}"/> </p>
-	<p class="token">GCalendar:<c:out value="${requestScope.tokenGC}"/> </p>
-	-->
+	
+	<!--  <p class="token">Spotify:<c:out value="${requestScope.tokenS}"/> </p>
+	<p class="token">GCalendar:<c:out value="${requestScope.tokenGC}"/> </p>-->
+	
 
 	
 	
@@ -29,7 +30,7 @@
 				<div class="tmaster-info">
 
 					<div class="wrap">
-						<form action="addEvent" method="post" accept-charset="utf-8">
+						<form action="/addEventController" method="post" accept-charset="utf-8">
 							<span>Evento: <strong><c:out value="${ticket.name}"/></strong></span><br/>
 							<input id="nombre" name="nombre" type="hidden" value="${ticket.name}"> 
 							<span>Fecha: <strong><c:out value="${ticket.dates.start.localDate}"/></strong></span><br/>
@@ -38,24 +39,9 @@
 							<input id="hora" name="hora" type="hidden" value="${ticket.dates.start.localTime}"> 
 							<span>Direccion: <strong><c:out value="${ticket.embedded.venues[0].address.line1}"/></strong></span><br/>
 							<input id="direccion" name="direccion" type="hidden" value="${ticket.embedded.venues[0].address.line1}"> 
-							<!--  <img class="img-tm" src="${ticket.images[0].url}"> -->
 							<button type="submit" class="addGC">Add to calendar</button>
 						</form>
 					</div>
-
-				<form action="/addEventController" method="post" accept-charset="utf-8">
-					<span>Evento: <c:out value="${ticket.name}"/></span><br/>
-					<input id="nombre" name="nombre" type="hidden" value="${ticket.name}"> 
-					<span>Fecha: <c:out value="${ticket.dates.start.localDate}"/></span><br/>
-					<input id="fecha" name="fecha" type="hidden" value="${ticket.dates.start.localDate}"> 
-					<span>Hora: <c:out value="${ticket.dates.start.localTime}"/></span><br/>
-					<input id="hora" name="hora" type="hidden" value="${ticket.dates.start.localTime}"> 
-					<span>Direccion: <c:out value="${ticket.embedded.venues[0].address.line1}"/></span><br/>
-					<input id="direccion" name="direccion" type="hidden" value="${ticket.embedded.venues[0].address.line1}"> 
-					<img class="img-tm" src="${ticket.images[0].url}">
-					<button type="submit" class="addGC">Add to calendar</button>
-				</form>
-
 				</div>	
 			</c:forEach>
 			
